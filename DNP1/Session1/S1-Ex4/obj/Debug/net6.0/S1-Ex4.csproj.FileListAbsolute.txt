@@ -1,0 +1,15 @@
+C:\Users\vlaro\DNP1\DNP1\Session1\S1-Ex4\obj\Debug\net6.0\S1-Ex4.csproj.AssemblyReference.cache
+C:\Users\vlaro\DNP1\DNP1\Session1\S1-Ex4\obj\Debug\net6.0\S1-Ex4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vlaro\DNP1\DNP1\Session1\S1-Ex4\obj\Debug\net6.0\S1-Ex4.AssemblyInfoInputs.cache
+C:\Users\vlaro\DNP1\DNP1\Session1\S1-Ex4\obj\Debug\net6.0\S1-Ex4.AssemblyInfo.cs
+C:\Users\vlaro\DNP1\DNP1\Session1\S1-Ex4\obj\Debug\net6.0\S1-Ex4.csproj.CoreCompileInputs.cache
+C:\Users\vlaro\DNP1\DNP1\Session1\S1-Ex4\bin\Debug\net6.0\S1-Ex4.exe
+C:\Users\vlaro\DNP1\DNP1\Session1\S1-Ex4\bin\Debug\net6.0\S1-Ex4.deps.json
+C:\Users\vlaro\DNP1\DNP1\Session1\S1-Ex4\bin\Debug\net6.0\S1-Ex4.runtimeconfig.json
+C:\Users\vlaro\DNP1\DNP1\Session1\S1-Ex4\bin\Debug\net6.0\S1-Ex4.dll
+C:\Users\vlaro\DNP1\DNP1\Session1\S1-Ex4\bin\Debug\net6.0\S1-Ex4.pdb
+C:\Users\vlaro\DNP1\DNP1\Session1\S1-Ex4\obj\Debug\net6.0\S1-Ex4.dll
+C:\Users\vlaro\DNP1\DNP1\Session1\S1-Ex4\obj\Debug\net6.0\refint\S1-Ex4.dll
+C:\Users\vlaro\DNP1\DNP1\Session1\S1-Ex4\obj\Debug\net6.0\S1-Ex4.pdb
+C:\Users\vlaro\DNP1\DNP1\Session1\S1-Ex4\obj\Debug\net6.0\S1-Ex4.genruntimeconfig.cache
+C:\Users\vlaro\DNP1\DNP1\Session1\S1-Ex4\obj\Debug\net6.0\ref\S1-Ex4.dll
