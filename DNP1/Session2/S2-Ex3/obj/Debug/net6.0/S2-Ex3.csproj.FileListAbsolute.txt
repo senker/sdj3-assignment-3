@@ -1,0 +1,15 @@
+C:\Users\vlaro\DNP1\DNP1\Session2\S2-Ex3\bin\Debug\net6.0\S2-Ex3.exe
+C:\Users\vlaro\DNP1\DNP1\Session2\S2-Ex3\bin\Debug\net6.0\S2-Ex3.deps.json
+C:\Users\vlaro\DNP1\DNP1\Session2\S2-Ex3\bin\Debug\net6.0\S2-Ex3.runtimeconfig.json
+C:\Users\vlaro\DNP1\DNP1\Session2\S2-Ex3\bin\Debug\net6.0\S2-Ex3.dll
+C:\Users\vlaro\DNP1\DNP1\Session2\S2-Ex3\bin\Debug\net6.0\S2-Ex3.pdb
+C:\Users\vlaro\DNP1\DNP1\Session2\S2-Ex3\obj\Debug\net6.0\S2-Ex3.csproj.AssemblyReference.cache
+C:\Users\vlaro\DNP1\DNP1\Session2\S2-Ex3\obj\Debug\net6.0\S2-Ex3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vlaro\DNP1\DNP1\Session2\S2-Ex3\obj\Debug\net6.0\S2-Ex3.AssemblyInfoInputs.cache
+C:\Users\vlaro\DNP1\DNP1\Session2\S2-Ex3\obj\Debug\net6.0\S2-Ex3.AssemblyInfo.cs
+C:\Users\vlaro\DNP1\DNP1\Session2\S2-Ex3\obj\Debug\net6.0\S2-Ex3.csproj.CoreCompileInputs.cache
+C:\Users\vlaro\DNP1\DNP1\Session2\S2-Ex3\obj\Debug\net6.0\S2-Ex3.dll
+C:\Users\vlaro\DNP1\DNP1\Session2\S2-Ex3\obj\Debug\net6.0\refint\S2-Ex3.dll
+C:\Users\vlaro\DNP1\DNP1\Session2\S2-Ex3\obj\Debug\net6.0\S2-Ex3.pdb
+C:\Users\vlaro\DNP1\DNP1\Session2\S2-Ex3\obj\Debug\net6.0\S2-Ex3.genruntimeconfig.cache
+C:\Users\vlaro\DNP1\DNP1\Session2\S2-Ex3\obj\Debug\net6.0\ref\S2-Ex3.dll
