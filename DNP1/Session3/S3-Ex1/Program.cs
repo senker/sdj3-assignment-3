@@ -13,6 +13,7 @@ string myJson = JsonSerializer.Serialize(threeFriends);
 
 Console.WriteLine(myJson);
 
-string jsonFormatted = JsonSerializer.Serialize(myJson, new JsonSerializerOptions {    WriteIndented = true});
+string jsonFormatted = JsonSerializer.Serialize(threeFriends, new JsonSerializerOptions {    WriteIndented = true});
 
+Console.WriteLine("Formatted json below:");
 Console.WriteLine(jsonFormatted);
