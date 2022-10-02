@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vlaro\\DNP1\\DNP1\\Session3\\Session3\\Session3.csproj",
-      "projectName": "Session3",
-      "projectPath": "C:\\Users\\vlaro\\DNP1\\DNP1\\Session3\\Session3\\Session3.csproj",
+      "projectUniqueName": "C:\\Users\\vlaro\\DNP1\\DNP1\\Session3\\S3-Ex2\\S3-Ex2.csproj",
+      "projectName": "S3-Ex2",
+      "projectPath": "C:\\Users\\vlaro\\DNP1\\DNP1\\Session3\\S3-Ex2\\S3-Ex2.csproj",
       "packagesPath": "C:\\Users\\vlaro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vlaro\\DNP1\\DNP1\\Session3\\Session3\\obj\\",
+      "outputPath": "C:\\Users\\vlaro\\DNP1\\DNP1\\Session3\\S3-Ex2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vlaro\\AppData\\Roaming\\NuGet\\NuGet.Config",
