@@ -20,7 +20,6 @@ class Program
             {
                 Console.Write("Gimme your input: ");
                 clientInput = Console.ReadLine();
-            
                 byte[] dataToServer = Encoding.ASCII.GetBytes(clientInput);
                 stream.Write(dataToServer, 0, dataToServer.Length);
             
