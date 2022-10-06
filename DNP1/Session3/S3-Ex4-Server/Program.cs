@@ -5,23 +5,9 @@ using System.Text;
 
 class Program
 {
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Starting server..");
-
-        IPAddress ip = IPAddress.Parse("127.0.0.1");
-        TcpListener listener = new TcpListener(ip, 5000);
-        listener.Start();
-
-        Console.WriteLine("Server started..");
-
-        while (true)
-        {
-            //TcpClient client = listener.AcceptTcpClient();
-            Thread thread = new Thread( () => HandleOneClient(listener));
-            thread.Start();
-        }
-    }
+    private const int PORT_NO = 5000;
+    private const string SERVER_IP = "127.0.0.1";
+    
     private static void HandleOneClient(TcpListener listener)
     {
         using TcpClient client = listener.AcceptTcpClient();
@@ -48,6 +34,25 @@ class Program
         client.Close();
 
     }
+    
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Starting server..");
+
+        IPAddress ip = IPAddress.Parse(SERVER_IP);
+        TcpListener listener = new TcpListener(ip, PORT_NO);
+        listener.Start();
+
+        Console.WriteLine("Server started..");
+
+        while (true)
+        {
+            //TcpClient client = listener.AcceptTcpClient();
+            Thread thread = new Thread( () => HandleOneClient(listener));
+            thread.Start();
+        }
+    }
+
 
     private static void HandleMultipleClients(TcpListener listener)
     {
