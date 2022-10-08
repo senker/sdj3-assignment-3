@@ -38,11 +38,16 @@ public class TodoFileDAO : ITodoHome
     {
         Todo byId = fileContext.Todos.First(t => t.Id == id);
         fileContext.Todos.Remove(byId);
+        fileContext.SaveChanges();
         return Task.CompletedTask;
     }
 
     public Task UpdateAsync(Todo todo)
     {
-        throw new NotImplementedException();
+        Todo toUpdate = fileContext.Todos.First(t => t.Id == todo.Id);
+        toUpdate.IsCompleted = todo.IsCompleted;
+        toUpdate.OwnerId = todo.OwnerId;
+        fileContext.SaveChanges();
+        return Task.CompletedTask;
     }
 }
