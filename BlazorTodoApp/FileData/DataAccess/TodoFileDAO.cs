@@ -36,8 +36,8 @@ public class TodoFileDAO : ITodoHome
 
     public Task DeleteAsync(int id)
     {
-        Todo byId = fileContext.Todos.First(t => t.Id == id);
-        fileContext.Todos.Remove(byId);
+        Todo toDelete = fileContext.Todos.First(t => t.Id == id);
+        fileContext.Todos.Remove(toDelete);
         fileContext.SaveChanges();
         return Task.CompletedTask;
     }

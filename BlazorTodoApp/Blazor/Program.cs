@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Blazor.Data;
+using Domain.Contracts;
+using FileData.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddScoped<FileContext>();
+builder.Services.AddScoped<ITodoHome, TodoFileDAO>();
 
 var app = builder.Build();
 
