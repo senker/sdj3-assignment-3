@@ -32,7 +32,12 @@ else
                 <td>@item.OwnerId</td> 
                 <td>@item.Id</td> 
                 <td>@item.Title</td> 
-                <td>@item.IsCompleted</td>
+                <td>
+                    <label class="switch">
+                        <input type ="checkbox" checked="@item.IsCompleted" @onchange="@((arg) => ToggleStatus((bool)arg.Value, item))">
+                        <span class="slider round"></span>
+                    </label>
+                </td>
                 <td>
                     
                     <label
@@ -68,6 +73,20 @@ else
             Todo todoToRemove = todos.First(todo => todo.Id == id);
             await TodoHome.DeleteAsync(id);
             todos.Remove(todoToRemove);
+        }
+        catch (Exception e)
+        {
+            errorLabel = e.Message;
+        }
+    }
+
+    private async Task ToggleStatus(bool status, Todo todo)
+    {
+        errorLabel = "";
+        todo.IsCompleted = status;
+        try
+        {
+            await TodoHome.UpdateAsync(todo);
         }
         catch (Exception e)
         {
