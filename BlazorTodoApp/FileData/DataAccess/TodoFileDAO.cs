@@ -47,6 +47,7 @@ public class TodoFileDAO : ITodoHome
         Todo toUpdate = fileContext.Todos.First(t => t.Id == todo.Id);
         toUpdate.IsCompleted = todo.IsCompleted;
         toUpdate.OwnerId = todo.OwnerId;
+        toUpdate.Title = todo.Title;
         fileContext.SaveChanges();
         return Task.CompletedTask;
     }
