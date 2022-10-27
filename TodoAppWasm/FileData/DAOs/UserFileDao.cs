@@ -1,8 +1,9 @@
+using Application.DaoInterfaces;
 using Domain.Models;
 
 namespace FileData.DAOs;
 
-public class UserFileDao
+public class UserFileDao : IUserDao
 {
     private readonly FileContext context;
 
