@@ -4,7 +4,7 @@ using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
-
+//controller class
 [ApiController]
 [Route("[controller]")]
 public class UsersController : ControllerBase
