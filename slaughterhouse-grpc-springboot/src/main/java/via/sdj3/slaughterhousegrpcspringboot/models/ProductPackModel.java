@@ -1,4 +1,4 @@
-package via.sdj3.slaughterhousegrpcspringboot.service.models;
+package via.sdj3.slaughterhousegrpcspringboot.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -15,7 +15,7 @@ public class ProductPackModel {
         joinColumns = { @JoinColumn(name = "product_pack_id") },
         inverseJoinColumns = { @JoinColumn(name = "tray_id") }
     )
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @NotNull
     Set<TrayModel> trays;
 

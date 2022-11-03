@@ -1,4 +1,4 @@
-package via.sdj3.slaughterhousegrpcspringboot.service.models;
+package via.sdj3.slaughterhousegrpcspringboot.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -10,10 +10,9 @@ public class AnimalModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
-
-    @Enumerated(EnumType.STRING)
+    
     @NotNull
-    private AnimalType type;
+    private String type;
 
     @NotNull
     private double weight;
@@ -23,12 +22,12 @@ public class AnimalModel {
 
     public AnimalModel() { }
 
-    public AnimalModel(AnimalType type, double weight) {
+    public AnimalModel(String type, double weight) {
         this.type = type;
         this.weight = weight;
     }
 
-    public AnimalModel(Long id, AnimalType type, double weight) {
+    public AnimalModel(Long id, String type, double weight) {
         this.id = id;
         this.type = type;
         this.weight = weight;
@@ -42,11 +41,11 @@ public class AnimalModel {
         this.id = id;
     }
 
-    public AnimalType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(AnimalType type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -57,10 +56,4 @@ public class AnimalModel {
     public void setWeight(double weight) {
         this.weight = weight;
     }
-}
-
-enum AnimalType {
-    CHICKEN,
-    COW,
-    PIG
 }

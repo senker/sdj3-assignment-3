@@ -14,27 +14,27 @@ public final class SlaughterhouseGrpc {
   public static final String SERVICE_NAME = "Slaughterhouse";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacks,
+  private static volatile io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest,
       via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> getGetAllAnimalRegNrInProductMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getAllAnimalRegNrInProduct",
-      requestType = via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacks.class,
+      requestType = via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest.class,
       responseType = via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacks,
+  public static io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest,
       via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> getGetAllAnimalRegNrInProductMethod() {
-    io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacks, via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> getGetAllAnimalRegNrInProductMethod;
+    io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest, via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> getGetAllAnimalRegNrInProductMethod;
     if ((getGetAllAnimalRegNrInProductMethod = SlaughterhouseGrpc.getGetAllAnimalRegNrInProductMethod) == null) {
       synchronized (SlaughterhouseGrpc.class) {
         if ((getGetAllAnimalRegNrInProductMethod = SlaughterhouseGrpc.getGetAllAnimalRegNrInProductMethod) == null) {
           SlaughterhouseGrpc.getGetAllAnimalRegNrInProductMethod = getGetAllAnimalRegNrInProductMethod =
-              io.grpc.MethodDescriptor.<via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacks, via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals>newBuilder()
+              io.grpc.MethodDescriptor.<via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest, via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getAllAnimalRegNrInProduct"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacks.getDefaultInstance()))
+                  via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals.getDefaultInstance()))
               .setSchemaDescriptor(new SlaughterhouseMethodDescriptorSupplier("getAllAnimalRegNrInProduct"))
@@ -157,7 +157,7 @@ public final class SlaughterhouseGrpc {
 
     /**
      */
-    public void getAllAnimalRegNrInProduct(via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacks request,
+    public void getAllAnimalRegNrInProduct(via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest request,
         io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAllAnimalRegNrInProductMethod(), responseObserver);
     }
@@ -182,7 +182,7 @@ public final class SlaughterhouseGrpc {
             getGetAllAnimalRegNrInProductMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacks,
+                via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest,
                 via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals>(
                   this, METHODID_GET_ALL_ANIMAL_REG_NR_IN_PRODUCT)))
           .addMethod(
@@ -219,7 +219,7 @@ public final class SlaughterhouseGrpc {
 
     /**
      */
-    public void getAllAnimalRegNrInProduct(via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacks request,
+    public void getAllAnimalRegNrInProduct(via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest request,
         io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAllAnimalRegNrInProductMethod(), getCallOptions()), request, responseObserver);
@@ -258,7 +258,7 @@ public final class SlaughterhouseGrpc {
 
     /**
      */
-    public via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals getAllAnimalRegNrInProduct(via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacks request) {
+    public via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals getAllAnimalRegNrInProduct(via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAllAnimalRegNrInProductMethod(), getCallOptions(), request);
     }
@@ -296,7 +296,7 @@ public final class SlaughterhouseGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> getAllAnimalRegNrInProduct(
-        via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacks request) {
+        via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAllAnimalRegNrInProductMethod(), getCallOptions()), request);
     }
@@ -332,7 +332,7 @@ public final class SlaughterhouseGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_GET_ALL_ANIMAL_REG_NR_IN_PRODUCT:
-          serviceImpl.getAllAnimalRegNrInProduct((via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacks) request,
+          serviceImpl.getAllAnimalRegNrInProduct((via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest) request,
               (io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals>) responseObserver);
           break;
         case METHODID_GET_ALL_PRODUCT_FROM_ANIMAL:

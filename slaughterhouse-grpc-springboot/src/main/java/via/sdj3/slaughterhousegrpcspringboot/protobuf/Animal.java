@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Animal() {
+    type_ = "";
   }
 
   @java.lang.Override
@@ -56,6 +57,12 @@ private static final long serialVersionUID = 0L;
           case 16: {
 
             animalNr_ = input.readInt32();
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            type_ = s;
             break;
           }
           default: {
@@ -114,6 +121,44 @@ private static final long serialVersionUID = 0L;
     return animalNr_;
   }
 
+  public static final int TYPE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object type_;
+  /**
+   * <code>string type = 3;</code>
+   * @return The type.
+   */
+  @java.lang.Override
+  public java.lang.String getType() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string type = 3;</code>
+   * @return The bytes for type.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTypeBytes() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      type_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -134,6 +179,9 @@ private static final long serialVersionUID = 0L;
     if (animalNr_ != 0) {
       output.writeInt32(2, animalNr_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, type_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -150,6 +198,9 @@ private static final long serialVersionUID = 0L;
     if (animalNr_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, animalNr_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, type_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -171,6 +222,8 @@ private static final long serialVersionUID = 0L;
             other.getWeight())) return false;
     if (getAnimalNr()
         != other.getAnimalNr()) return false;
+    if (!getType()
+        .equals(other.getType())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -187,6 +240,8 @@ private static final long serialVersionUID = 0L;
         java.lang.Double.doubleToLongBits(getWeight()));
     hash = (37 * hash) + ANIMALNR_FIELD_NUMBER;
     hash = (53 * hash) + getAnimalNr();
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -324,6 +379,8 @@ private static final long serialVersionUID = 0L;
 
       animalNr_ = 0;
 
+      type_ = "";
+
       return this;
     }
 
@@ -352,6 +409,7 @@ private static final long serialVersionUID = 0L;
       via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal result = new via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal(this);
       result.weight_ = weight_;
       result.animalNr_ = animalNr_;
+      result.type_ = type_;
       onBuilt();
       return result;
     }
@@ -405,6 +463,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getAnimalNr() != 0) {
         setAnimalNr(other.getAnimalNr());
+      }
+      if (!other.getType().isEmpty()) {
+        type_ = other.type_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -493,6 +555,82 @@ private static final long serialVersionUID = 0L;
     public Builder clearAnimalNr() {
       
       animalNr_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object type_ = "";
+    /**
+     * <code>string type = 3;</code>
+     * @return The type.
+     */
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string type = 3;</code>
+     * @return The bytes for type.
+     */
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string type = 3;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string type = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      
+      type_ = getDefaultInstance().getType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string type = 3;</code>
+     * @param value The bytes for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      type_ = value;
       onChanged();
       return this;
     }

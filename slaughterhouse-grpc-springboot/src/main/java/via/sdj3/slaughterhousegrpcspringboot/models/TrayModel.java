@@ -1,4 +1,4 @@
-package via.sdj3.slaughterhousegrpcspringboot.service.models;
+package via.sdj3.slaughterhousegrpcspringboot.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -14,19 +14,32 @@ public class TrayModel {
     @NotNull
     private double maximumWeight;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="tray")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy="tray")
     @NotNull
     Set<AnimalPartModel> animalParts;
 
     @ManyToMany(mappedBy = "trays")
-    @NotNull
     Set<ProductPackModel> productPacks;
 
     public TrayModel() { }
 
-    public TrayModel(double maximumWeight, Set<AnimalPartModel> animalParts, Set<ProductPackModel> productPacks) {
+    public TrayModel(double maximumWeight) {
         this.maximumWeight = maximumWeight;
-        this.animalParts = animalParts;
+    }
+
+    public TrayModel(Long id, double maximumWeight) {
+        this.id = id;
+        this.maximumWeight = maximumWeight;
+    }
+
+    public TrayModel(double maximumWeight, Set<ProductPackModel> productPacks) {
+        this.maximumWeight = maximumWeight;
+        this.productPacks = productPacks;
+    }
+
+    public TrayModel(Long id, double maximumWeight, Set<ProductPackModel> productPacks) {
+        this.id = id;
+        this.maximumWeight = maximumWeight;
         this.productPacks = productPacks;
     }
 
@@ -35,13 +48,6 @@ public class TrayModel {
     }
 
     public void setProductPacks(Set<ProductPackModel> productPacks) {
-        this.productPacks = productPacks;
-    }
-
-    public TrayModel(Long id, double maximumWeight, Set<AnimalPartModel> animalParts) {
-        this.id = id;
-        this.maximumWeight = maximumWeight;
-        this.animalParts = animalParts;
         this.productPacks = productPacks;
     }
 

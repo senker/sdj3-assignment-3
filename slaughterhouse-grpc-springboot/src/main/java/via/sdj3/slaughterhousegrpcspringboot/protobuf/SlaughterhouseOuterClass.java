@@ -49,6 +49,11 @@ public final class SlaughterhouseOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ProductPacks_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ProductPackRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ProductPackRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -59,20 +64,22 @@ public final class SlaughterhouseOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024Slaughterhouse.proto\"\007\n\005Empty\"\035\n\rAlive" +
-      "Response\022\014\n\004text\030\001 \003(\t\"*\n\006Animal\022\016\n\006weig" +
-      "ht\030\001 \001(\001\022\020\n\010animalNr\030\002 \001(\005\"^\n\nAnimalPart" +
-      "\022\022\n\npartWeight\030\001 \001(\001\022\022\n\npartNumber\030\002 \001(\005" +
-      "\022\032\n\tanimalRef\030\003 \001(\0132\007.Animal\022\014\n\004type\030\004 \001" +
-      "(\t\"#\n\007Animals\022\030\n\007animals\030\001 \003(\0132\007.Animal\"" +
-      "M\n\005Trays\022\035\n\010partType\030\001 \003(\0132\013.AnimalPart\022" +
-      "\025\n\rmaximumWeight\030\002 \001(\001\022\016\n\006trayNr\030\003 \001(\005\"7" +
-      "\n\014ProductPacks\022\016\n\006packNr\030\001 \001(\005\022\027\n\007trayRe" +
-      "f\030\002 \003(\0132\006.Trays2\240\001\n\016Slaughterhouse\0225\n\032ge" +
-      "tAllAnimalRegNrInProduct\022\r.ProductPacks\032" +
-      "\010.Animals\0223\n\027getAllProductFromAnimal\022\007.A" +
-      "nimal\032\r.ProductPacks0\001\022\"\n\010getAlive\022\006.Emp" +
-      "ty\032\016.AliveResponseB2\n.via.sdj3.slaughter" +
-      "housegrpcspringboot.protobufP\001b\006proto3"
+      "Response\022\014\n\004text\030\001 \003(\t\"8\n\006Animal\022\016\n\006weig" +
+      "ht\030\001 \001(\001\022\020\n\010animalNr\030\002 \001(\005\022\014\n\004type\030\003 \001(\t" +
+      "\"^\n\nAnimalPart\022\022\n\npartWeight\030\001 \001(\001\022\022\n\npa" +
+      "rtNumber\030\002 \001(\005\022\032\n\tanimalRef\030\003 \001(\0132\007.Anim" +
+      "al\022\014\n\004type\030\004 \001(\t\"#\n\007Animals\022\030\n\007animals\030\001" +
+      " \003(\0132\007.Animal\"M\n\005Trays\022\035\n\010partType\030\001 \003(\013" +
+      "2\013.AnimalPart\022\025\n\rmaximumWeight\030\002 \001(\001\022\016\n\006" +
+      "trayNr\030\003 \001(\005\"7\n\014ProductPacks\022\016\n\006packNr\030\001" +
+      " \001(\005\022\027\n\007trayRef\030\002 \003(\0132\006.Trays\" \n\022Product" +
+      "PackRequest\022\n\n\002id\030\001 \001(\0052\246\001\n\016Slaughterhou" +
+      "se\022;\n\032getAllAnimalRegNrInProduct\022\023.Produ" +
+      "ctPackRequest\032\010.Animals\0223\n\027getAllProduct" +
+      "FromAnimal\022\007.Animal\032\r.ProductPacks0\001\022\"\n\010" +
+      "getAlive\022\006.Empty\032\016.AliveResponseB2\n.via." +
+      "sdj3.slaughterhousegrpcspringboot.protob" +
+      "ufP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -95,7 +102,7 @@ public final class SlaughterhouseOuterClass {
     internal_static_Animal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Animal_descriptor,
-        new java.lang.String[] { "Weight", "AnimalNr", });
+        new java.lang.String[] { "Weight", "AnimalNr", "Type", });
     internal_static_AnimalPart_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_AnimalPart_fieldAccessorTable = new
@@ -120,6 +127,12 @@ public final class SlaughterhouseOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ProductPacks_descriptor,
         new java.lang.String[] { "PackNr", "TrayRef", });
+    internal_static_ProductPackRequest_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_ProductPackRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ProductPackRequest_descriptor,
+        new java.lang.String[] { "Id", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

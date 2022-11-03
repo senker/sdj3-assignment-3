@@ -1,4 +1,4 @@
-package via.sdj3.slaughterhousegrpcspringboot.service.models;
+package via.sdj3.slaughterhousegrpcspringboot.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -20,30 +20,32 @@ public class AnimalPartModel {
     private String type;
 
     @JoinColumn(name = "animal_id")
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @NotNull
     AnimalModel animal;
 
     @JoinColumn(name = "tray_id")
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @NotNull
     TrayModel tray;
 
     public AnimalPartModel() { }
 
-    public AnimalPartModel(int partNumber, double partWeight, String type, AnimalModel animal) {
+    public AnimalPartModel(int partNumber, double partWeight, String type, AnimalModel animal, TrayModel tray) {
         this.partNumber = partNumber;
         this.partWeight = partWeight;
         this.type = type;
         this.animal = animal;
+        this.tray = tray;
     }
 
-    public AnimalPartModel(Long id, int partNumber, double partWeight, String type, AnimalModel animal) {
+    public AnimalPartModel(Long id, int partNumber, double partWeight, String type, AnimalModel animal, TrayModel tray) {
         this.id = id;
         this.partNumber = partNumber;
         this.partWeight = partWeight;
         this.type = type;
         this.animal = animal;
+        this.tray = tray;
     }
 
     public Long getId() {
@@ -84,5 +86,13 @@ public class AnimalPartModel {
 
     public void setAnimal(AnimalModel animal) {
         this.animal = animal;
+    }
+
+    public TrayModel getTray() {
+        return tray;
+    }
+
+    public void setTray(TrayModel tray) {
+        this.tray = tray;
     }
 }

@@ -18,58 +18,15 @@ public class GrpcClient {
         SlaughterhouseGrpc.SlaughterhouseBlockingStub stub
                 = SlaughterhouseGrpc.newBlockingStub(channel);
 
-        Animal animal = Animal
-                .newBuilder()
-                .setAnimalNr(3)
-                .setWeight(10)
-                .build();
-
-        AnimalPart animalPart = AnimalPart.newBuilder()
-                .setAnimalRef(animal)
-                .setPartNumber(3)
-                .setPartWeight(2.0)
-                .setType("beef")
-                .build();
-
-        Trays tray = Trays.newBuilder()
-                .setTrayNr(1)
-                .addPartType(animalPart)
-                .setMaximumWeight(23.33)
-                .build();
-
-
-        ProductPacks productPacks = ProductPacks.newBuilder()
-                .setPackNr(10)
-                .addTrayRef(tray)
-                .build();
-
-        Animals animals = stub.getAllAnimalRegNrInProduct(productPacks);
+        Animals animals = stub.getAllAnimalRegNrInProduct(
+                ProductPackRequest.newBuilder()
+                        .setId(1)
+                        .build()
+        );
 
         for (Animal _animal: animals.getAnimalsList()) {
             System.out.println("Animal -> " + _animal.toString());
         }
-
-//        AliveResponse text = stub.getAlive(
-//                Empty.newBuilder().build()
-//        );
-//
-//        for (String obj : text.getTextList())
-//             {
-//                 System.out.println("[.getAlive()]" + obj);
-//
-//             }
-
-
-//        Iterator<Animals> response = stub
-//                .getAllAnimalRegNrInProduct(
-//                        ProductPacks.newBuilder(product).build()
-//                );
-
-
-//        for (Iterator<Animal> it = response; it.hasNext(); ) {
-//            Animal obj = it.next();
-//            System.out.println(obj.toString());
-//        }
 
         System.out.println();
         System.out.println();
