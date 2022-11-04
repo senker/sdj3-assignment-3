@@ -5,7 +5,7 @@ option java_package = "via.sdj3.slaughterhousegrpcspringboot.protobuf";
 
 service Slaughterhouse {
   rpc getAllAnimalRegNrInProduct(ProductPackRequest) returns (Animals);
-  rpc getAllProductFromAnimal(Animal) returns (stream ProductPacks);
+  rpc getAllProductFromAnimal(AnimalRequest) returns (ProductPacksResponse);
   rpc getAlive(Empty) returns (AliveResponse);
 }
 
@@ -45,4 +45,12 @@ message ProductPacks {
 
 message ProductPackRequest {
   int32 id = 1;
+}
+
+message AnimalRequest {
+  int32 id = 1;
+}
+
+message ProductPacksResponse {
+  repeated int32 productPackId = 1;
 }
