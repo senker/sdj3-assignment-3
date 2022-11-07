@@ -18,7 +18,7 @@ public class TrayModel {
     @NotNull
     Set<AnimalPartModel> animalParts;
 
-    @ManyToMany(mappedBy = "trays")
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "trays")
     Set<ProductPackModel> productPacks;
 
     public TrayModel() { }
