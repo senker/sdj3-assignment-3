@@ -31,4 +31,3 @@ C:\Users\vlaro\DNP1\TodoAppWasm\WebAPI\bin\Debug\net6.0\FileData.dll
 C:\Users\vlaro\DNP1\TodoAppWasm\WebAPI\bin\Debug\net6.0\Application.pdb
 C:\Users\vlaro\DNP1\TodoAppWasm\WebAPI\bin\Debug\net6.0\FileData.pdb
 C:\Users\vlaro\DNP1\TodoAppWasm\WebAPI\bin\Debug\net6.0\Domain.pdb
-C:\Users\vlaro\DNP1\TodoAppWasm\WebAPI\bin\Debug\net6.0\data.json
