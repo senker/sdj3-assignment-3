@@ -31,7 +31,7 @@ public class SlaughterhouseImpl extends SlaughterhouseGrpc.SlaughterhouseImplBas
         this.productPackRepository = productPackRepository;
         this.trayRepository = trayRepository;
 
-        //seedDatabase();
+//        seedDatabase();
     }
 
     private void seedDatabase() {
@@ -60,11 +60,7 @@ public class SlaughterhouseImpl extends SlaughterhouseGrpc.SlaughterhouseImplBas
                 )
         );
 
-        TrayModel chickenBreastTray = trayRepository.save(
-                new TrayModel(15.0)
-        );
-
-        TrayModel chickenLegTray = trayRepository.save(
+        TrayModel chickenTray = trayRepository.save(
                 new TrayModel(15.0)
         );
 
@@ -72,33 +68,23 @@ public class SlaughterhouseImpl extends SlaughterhouseGrpc.SlaughterhouseImplBas
                 new TrayModel(500.0)
         );
 
-        AnimalPartModel chickenBreasts = animalPartRepository.save(
+        AnimalPartModel chickenPart = animalPartRepository.save(
                 new AnimalPartModel(
                         1,
                         2.0,
-                        "breast",
+                        chicken.getType(),
                         chicken,
-                        chickenBreastTray
+                        chickenTray
                 )
         );
 
-        AnimalPartModel chicken1Breasts = animalPartRepository.save(
+        AnimalPartModel chickenPart1 = animalPartRepository.save(
                 new AnimalPartModel(
                         1,
                         2.0,
-                        "breast",
+                        chicken1.getType(),
                         chicken1,
-                        chickenBreastTray
-                )
-        );
-
-        AnimalPartModel chickenLegs = animalPartRepository.save(
-                new AnimalPartModel(
-                        1,
-                        2.0,
-                        "leg",
-                        chicken,
-                        chickenLegTray
+                        chickenTray
                 )
         );
 
@@ -106,7 +92,7 @@ public class SlaughterhouseImpl extends SlaughterhouseGrpc.SlaughterhouseImplBas
                 new AnimalPartModel(
                         1,
                         2.0,
-                        "steak",
+                        cow.getType(),
                         cow,
                         cowTray
                 )
@@ -115,18 +101,10 @@ public class SlaughterhouseImpl extends SlaughterhouseGrpc.SlaughterhouseImplBas
         ProductPackModel productPack = productPackRepository.save(
             new ProductPackModel(
                 new HashSet<TrayModel>(Arrays.asList(
-                    chickenBreastTray,
+                    chickenTray,
                     cowTray
                 ))
             )
-        );
-
-        ProductPackModel productPack1 = productPackRepository.save(
-                new ProductPackModel(
-                        new HashSet<TrayModel>(Arrays.asList(
-                                chickenLegTray
-                        ))
-                )
         );
     }
 
@@ -150,6 +128,33 @@ public class SlaughterhouseImpl extends SlaughterhouseGrpc.SlaughterhouseImplBas
 
         responseObserver.onNext(generateAnimalsResponse(foundAnimals));
         responseObserver.onCompleted();
+
+//        System.out.println("[SlaughterhouseImpl::getAllAnimalRegNrInProduct]");
+//
+//        String allTrayRef = "";
+//        for (Trays tray : request.getTrayRefList())
+//        {
+//            allTrayRef += tray.getTrayNr() + " - ";
+//        }
+//
+//        System.out.println("Received product nr ====> " + request.getPackNr() + " Tray ref ====> " + allTrayRef);
+//        Animals animalsResponse = Animals.newBuilder()
+//                .addAnimals(
+//                        Animal.newBuilder()
+//                                .setAnimalNr(1)
+//                                .setWeight(23.33)
+//                                .build()
+//                )
+//                .addAnimals(
+//                        Animal.newBuilder()
+//                                .setAnimalNr(2)
+//                                .setWeight(99.99)
+//                                .build()
+//                )
+//                .build();
+//
+//        responseObserver.onNext(animalsResponse);
+//        responseObserver.onCompleted();
     }
 
     private Animals generateAnimalsResponse(List<AnimalModel> animals) {
@@ -168,38 +173,21 @@ public class SlaughterhouseImpl extends SlaughterhouseGrpc.SlaughterhouseImplBas
     }
 
     @Override
-    public void getAllProductFromAnimal(AnimalRequest request, StreamObserver<ProductPacksResponse> responseObserver) {
-        Long animalId = (long) request.getId();
-        Optional<AnimalModel> animalOptional = animalRepository.findById(animalId);
-
-        if (animalOptional.isEmpty()) {
-            var status = Status.NOT_FOUND.withDescription("Animal not found");
-            responseObserver.onError(status.asException());
-            return;
-        }
-
-        Optional<List<AnimalPartModel>> animalPartsOptional = animalPartRepository
-                .findAnimalPartModelsByAnimal_Id(animalId);
-
-        List<ProductPackModel> foundProductPacks = new ArrayList<ProductPackModel>();
-
-        for (AnimalPartModel animalPart : animalPartsOptional.get()) {
-            for (ProductPackModel productPack : animalPart.getTray().getProductPacks()) {
-                foundProductPacks.add(productPack);
-            }
-        }
-
-        responseObserver.onNext(generateProductPacksResponse(foundProductPacks));
-        responseObserver.onCompleted();
+    public void getAllProductFromAnimal(Animal request, StreamObserver<ProductPacks> responseObserver) {
+        super.getAllProductFromAnimal(request, responseObserver);
     }
 
-    private ProductPacksResponse generateProductPacksResponse(List<ProductPackModel> productPacks) {
-        ProductPacksResponse.Builder builder = ProductPacksResponse.newBuilder();
+        @Override
+    public void getAlive(Empty request, StreamObserver<AliveResponse> responseObserver) {
+        System.out.println("[SlaughterhouseImpl::getAlive]");
 
-        productPacks.forEach(productPack ->
-                builder.addProductPackId(productPack.getId().intValue())
-        );
+        AliveResponse texts = AliveResponse.newBuilder()
+                .addText("hello world")
+                .addText("wassap")
+                .build();
 
-        return builder.build();
+
+        responseObserver.onNext(texts);
+        responseObserver.onCompleted();
     }
 }

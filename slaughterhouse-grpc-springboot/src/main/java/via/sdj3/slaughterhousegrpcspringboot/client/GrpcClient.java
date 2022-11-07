@@ -4,6 +4,11 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import via.sdj3.slaughterhousegrpcspringboot.protobuf.*;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+
 public class GrpcClient {
     public static void main(String[] args) {
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 6565)
@@ -19,24 +24,8 @@ public class GrpcClient {
                         .build()
         );
 
-        for (Animal _animal : animals.getAnimalsList()) {
+        for (Animal _animal: animals.getAnimalsList()) {
             System.out.println("Animal -> " + _animal.toString());
-        }
-
-        int animalId = 4;
-
-        ProductPacksResponse productPacksIds = stub.getAllProductFromAnimal(
-                AnimalRequest.newBuilder()
-                        .setId(animalId)
-                        .build()
-        );
-
-        if (productPacksIds.getProductPackIdList().size() == 0) {
-            System.out.println("No product packs found for animal with id -> " + animalId);
-        } else {
-            for (int productPackId : productPacksIds.getProductPackIdList()) {
-                System.out.println("Product pack id -> " + productPackId);
-            }
         }
 
         System.out.println();

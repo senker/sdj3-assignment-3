@@ -54,16 +54,6 @@ public final class SlaughterhouseOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ProductPackRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_AnimalRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_AnimalRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ProductPacksResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ProductPacksResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -83,15 +73,13 @@ public final class SlaughterhouseOuterClass {
       "2\013.AnimalPart\022\025\n\rmaximumWeight\030\002 \001(\001\022\016\n\006" +
       "trayNr\030\003 \001(\005\"7\n\014ProductPacks\022\016\n\006packNr\030\001" +
       " \001(\005\022\027\n\007trayRef\030\002 \003(\0132\006.Trays\" \n\022Product" +
-      "PackRequest\022\n\n\002id\030\001 \001(\005\"\033\n\rAnimalRequest" +
-      "\022\n\n\002id\030\001 \001(\005\"-\n\024ProductPacksResponse\022\025\n\r" +
-      "productPackId\030\001 \003(\0052\263\001\n\016Slaughterhouse\022;" +
-      "\n\032getAllAnimalRegNrInProduct\022\023.ProductPa" +
-      "ckRequest\032\010.Animals\022@\n\027getAllProductFrom" +
-      "Animal\022\016.AnimalRequest\032\025.ProductPacksRes" +
-      "ponse\022\"\n\010getAlive\022\006.Empty\032\016.AliveRespons" +
-      "eB2\n.via.sdj3.slaughterhousegrpcspringbo" +
-      "ot.protobufP\001b\006proto3"
+      "PackRequest\022\n\n\002id\030\001 \001(\0052\246\001\n\016Slaughterhou" +
+      "se\022;\n\032getAllAnimalRegNrInProduct\022\023.Produ" +
+      "ctPackRequest\032\010.Animals\0223\n\027getAllProduct" +
+      "FromAnimal\022\007.Animal\032\r.ProductPacks0\001\022\"\n\010" +
+      "getAlive\022\006.Empty\032\016.AliveResponseB2\n.via." +
+      "sdj3.slaughterhousegrpcspringboot.protob" +
+      "ufP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -145,18 +133,6 @@ public final class SlaughterhouseOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ProductPackRequest_descriptor,
         new java.lang.String[] { "Id", });
-    internal_static_AnimalRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_AnimalRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_AnimalRequest_descriptor,
-        new java.lang.String[] { "Id", });
-    internal_static_ProductPacksResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_ProductPacksResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ProductPacksResponse_descriptor,
-        new java.lang.String[] { "ProductPackId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
