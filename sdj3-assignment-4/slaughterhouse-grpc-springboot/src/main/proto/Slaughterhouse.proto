@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "via.sdj3.slaughterhousegrpcspringboot.protobuf";
+
+service Slaughterhouse {
+  rpc getAllAnimalRegNrInProduct(ProductPackRequest) returns (Animals);
+  rpc getAllProductFromAnimal(AnimalRequest) returns (ProductPacksResponse);
+  rpc getAlive(Empty) returns (AliveResponse);
+}
+
+message Empty {}
+
+message AliveResponse {
+  repeated string text = 1;
+}
+
+message Animal {
+  double weight = 1;
+  int32 animalNr = 2;
+  string type = 3;
+}
+
+message AnimalPart {
+  double partWeight = 1;
+  int32 partNumber = 2;
+  Animal animalRef = 3;
+  string type = 4;
+}
+
+message Animals {
+  repeated Animal animals = 1;
+}
+
+message Trays {
+  repeated AnimalPart partType = 1;
+  double maximumWeight = 2;
+  int32 trayNr = 3;
+}
+
+message ProductPacks {
+  int32 packNr = 1;
+  repeated Trays trayRef = 2;
+}
+
+message ProductPackRequest {
+  int32 id = 1;
+}
+
+message AnimalRequest {
+  int32 id = 1;
+}
+
+message ProductPacksResponse {
+  repeated int32 productPackId = 1;
+}
