@@ -60,7 +60,7 @@ public class AnimalController0 {
         return "Animal deleted";
     }
 
-    @GetMapping("/animals/product/{productId}")  // R endpoint
+    @GetMapping("/animals/animalFromProduct/{productId}")  // R endpoint
     @ResponseBody
     public List<AnimalModel> getAllAnimalRegNrInProduct(@PathVariable Integer productId) {
         return animalService.getAllAnimalRegNrInProduct(productId);
