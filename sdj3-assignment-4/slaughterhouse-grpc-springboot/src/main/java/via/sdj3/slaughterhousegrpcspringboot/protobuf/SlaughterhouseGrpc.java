@@ -170,37 +170,6 @@ public final class SlaughterhouseGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty,
-      via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse> getGetAliveMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "getAlive",
-      requestType = via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty.class,
-      responseType = via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty,
-      via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse> getGetAliveMethod() {
-    io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty, via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse> getGetAliveMethod;
-    if ((getGetAliveMethod = SlaughterhouseGrpc.getGetAliveMethod) == null) {
-      synchronized (SlaughterhouseGrpc.class) {
-        if ((getGetAliveMethod = SlaughterhouseGrpc.getGetAliveMethod) == null) {
-          SlaughterhouseGrpc.getGetAliveMethod = getGetAliveMethod =
-              io.grpc.MethodDescriptor.<via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty, via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getAlive"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new SlaughterhouseMethodDescriptorSupplier("getAlive"))
-              .build();
-        }
-      }
-    }
-    return getGetAliveMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty,
       via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> getGetAllAnimalsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
@@ -260,6 +229,37 @@ public final class SlaughterhouseGrpc {
       }
     }
     return getDeleteByRegNrMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin,
+      via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> getGetAllAnimalsByOriginMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "getAllAnimalsByOrigin",
+      requestType = via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin.class,
+      responseType = via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin,
+      via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> getGetAllAnimalsByOriginMethod() {
+    io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin, via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> getGetAllAnimalsByOriginMethod;
+    if ((getGetAllAnimalsByOriginMethod = SlaughterhouseGrpc.getGetAllAnimalsByOriginMethod) == null) {
+      synchronized (SlaughterhouseGrpc.class) {
+        if ((getGetAllAnimalsByOriginMethod = SlaughterhouseGrpc.getGetAllAnimalsByOriginMethod) == null) {
+          SlaughterhouseGrpc.getGetAllAnimalsByOriginMethod = getGetAllAnimalsByOriginMethod =
+              io.grpc.MethodDescriptor.<via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin, via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getAllAnimalsByOrigin"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals.getDefaultInstance()))
+              .setSchemaDescriptor(new SlaughterhouseMethodDescriptorSupplier("getAllAnimalsByOrigin"))
+              .build();
+        }
+      }
+    }
+    return getGetAllAnimalsByOriginMethod;
   }
 
   /**
@@ -347,13 +347,6 @@ public final class SlaughterhouseGrpc {
 
     /**
      */
-    public void getAlive(via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAliveMethod(), responseObserver);
-    }
-
-    /**
-     */
     public void getAllAnimals(via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty request,
         io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAllAnimalsMethod(), responseObserver);
@@ -364,6 +357,13 @@ public final class SlaughterhouseGrpc {
     public void deleteByRegNr(via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalRegNr request,
         io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteByRegNrMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getAllAnimalsByOrigin(via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin request,
+        io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAllAnimalsByOriginMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -404,13 +404,6 @@ public final class SlaughterhouseGrpc {
                 via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal>(
                   this, METHODID_UPDATE_ANIMAL)))
           .addMethod(
-            getGetAliveMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty,
-                via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse>(
-                  this, METHODID_GET_ALIVE)))
-          .addMethod(
             getGetAllAnimalsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -424,6 +417,13 @@ public final class SlaughterhouseGrpc {
                 via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalRegNr,
                 via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal>(
                   this, METHODID_DELETE_BY_REG_NR)))
+          .addMethod(
+            getGetAllAnimalsByOriginMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin,
+                via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals>(
+                  this, METHODID_GET_ALL_ANIMALS_BY_ORIGIN)))
           .build();
     }
   }
@@ -484,14 +484,6 @@ public final class SlaughterhouseGrpc {
 
     /**
      */
-    public void getAlive(via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetAliveMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
     public void getAllAnimals(via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty request,
         io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -504,6 +496,14 @@ public final class SlaughterhouseGrpc {
         io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteByRegNrMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getAllAnimalsByOrigin(via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin request,
+        io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAllAnimalsByOriginMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -558,13 +558,6 @@ public final class SlaughterhouseGrpc {
 
     /**
      */
-    public via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse getAlive(via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetAliveMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
     public via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals getAllAnimals(via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAllAnimalsMethod(), getCallOptions(), request);
@@ -575,6 +568,13 @@ public final class SlaughterhouseGrpc {
     public via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal deleteByRegNr(via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalRegNr request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteByRegNrMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals getAllAnimalsByOrigin(via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAllAnimalsByOriginMethod(), getCallOptions(), request);
     }
   }
 
@@ -634,14 +634,6 @@ public final class SlaughterhouseGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse> getAlive(
-        via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetAliveMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
     public com.google.common.util.concurrent.ListenableFuture<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> getAllAnimals(
         via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -655,6 +647,14 @@ public final class SlaughterhouseGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteByRegNrMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> getAllAnimalsByOrigin(
+        via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAllAnimalsByOriginMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_ANIMAL = 0;
@@ -662,9 +662,9 @@ public final class SlaughterhouseGrpc {
   private static final int METHODID_GET_ALL_PRODUCT_FROM_ANIMAL = 2;
   private static final int METHODID_GET_ANIMAL_BY_REG_NR = 3;
   private static final int METHODID_UPDATE_ANIMAL = 4;
-  private static final int METHODID_GET_ALIVE = 5;
-  private static final int METHODID_GET_ALL_ANIMALS = 6;
-  private static final int METHODID_DELETE_BY_REG_NR = 7;
+  private static final int METHODID_GET_ALL_ANIMALS = 5;
+  private static final int METHODID_DELETE_BY_REG_NR = 6;
+  private static final int METHODID_GET_ALL_ANIMALS_BY_ORIGIN = 7;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -703,10 +703,6 @@ public final class SlaughterhouseGrpc {
           serviceImpl.updateAnimal((via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal) request,
               (io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal>) responseObserver);
           break;
-        case METHODID_GET_ALIVE:
-          serviceImpl.getAlive((via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty) request,
-              (io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse>) responseObserver);
-          break;
         case METHODID_GET_ALL_ANIMALS:
           serviceImpl.getAllAnimals((via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty) request,
               (io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals>) responseObserver);
@@ -714,6 +710,10 @@ public final class SlaughterhouseGrpc {
         case METHODID_DELETE_BY_REG_NR:
           serviceImpl.deleteByRegNr((via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalRegNr) request,
               (io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal>) responseObserver);
+          break;
+        case METHODID_GET_ALL_ANIMALS_BY_ORIGIN:
+          serviceImpl.getAllAnimalsByOrigin((via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin) request,
+              (io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -781,9 +781,9 @@ public final class SlaughterhouseGrpc {
               .addMethod(getGetAllProductFromAnimalMethod())
               .addMethod(getGetAnimalByRegNrMethod())
               .addMethod(getUpdateAnimalMethod())
-              .addMethod(getGetAliveMethod())
               .addMethod(getGetAllAnimalsMethod())
               .addMethod(getDeleteByRegNrMethod())
+              .addMethod(getGetAllAnimalsByOriginMethod())
               .build();
         }
       }

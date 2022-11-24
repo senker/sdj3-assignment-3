@@ -4,26 +4,26 @@
 package via.sdj3.slaughterhousegrpcspringboot.protobuf;
 
 /**
- * Protobuf type {@code AliveResponse}
+ * Protobuf type {@code AnimalOrigin}
  */
-public final class AliveResponse extends
+public final class AnimalOrigin extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:AliveResponse)
-    AliveResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:AnimalOrigin)
+    AnimalOriginOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use AliveResponse.newBuilder() to construct.
-  private AliveResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use AnimalOrigin.newBuilder() to construct.
+  private AnimalOrigin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private AliveResponse() {
-    text_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+  private AnimalOrigin() {
+    origin_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new AliveResponse();
+    return new AnimalOrigin();
   }
 
   @java.lang.Override
@@ -31,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private AliveResponse(
+  private AnimalOrigin(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -39,7 +39,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -52,11 +51,8 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              text_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            text_.add(s);
+
+            origin_ = s;
             break;
           }
           default: {
@@ -76,59 +72,59 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        text_ = text_.getUnmodifiableView();
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return via.sdj3.slaughterhousegrpcspringboot.protobuf.SlaughterhouseOuterClass.internal_static_AliveResponse_descriptor;
+    return via.sdj3.slaughterhousegrpcspringboot.protobuf.SlaughterhouseOuterClass.internal_static_AnimalOrigin_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return via.sdj3.slaughterhousegrpcspringboot.protobuf.SlaughterhouseOuterClass.internal_static_AliveResponse_fieldAccessorTable
+    return via.sdj3.slaughterhousegrpcspringboot.protobuf.SlaughterhouseOuterClass.internal_static_AnimalOrigin_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse.class, via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse.Builder.class);
+            via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin.class, via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin.Builder.class);
   }
 
-  public static final int TEXT_FIELD_NUMBER = 1;
-  private com.google.protobuf.LazyStringList text_;
+  public static final int ORIGIN_FIELD_NUMBER = 1;
+  private volatile java.lang.Object origin_;
   /**
-   * <code>repeated string text = 1;</code>
-   * @return A list containing the text.
+   * <code>string origin = 1;</code>
+   * @return The origin.
    */
-  public com.google.protobuf.ProtocolStringList
-      getTextList() {
-    return text_;
+  @java.lang.Override
+  public java.lang.String getOrigin() {
+    java.lang.Object ref = origin_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      origin_ = s;
+      return s;
+    }
   }
   /**
-   * <code>repeated string text = 1;</code>
-   * @return The count of text.
+   * <code>string origin = 1;</code>
+   * @return The bytes for origin.
    */
-  public int getTextCount() {
-    return text_.size();
-  }
-  /**
-   * <code>repeated string text = 1;</code>
-   * @param index The index of the element to return.
-   * @return The text at the given index.
-   */
-  public java.lang.String getText(int index) {
-    return text_.get(index);
-  }
-  /**
-   * <code>repeated string text = 1;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the text at the given index.
-   */
+  @java.lang.Override
   public com.google.protobuf.ByteString
-      getTextBytes(int index) {
-    return text_.getByteString(index);
+      getOriginBytes() {
+    java.lang.Object ref = origin_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      origin_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -145,8 +141,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < text_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, text_.getRaw(i));
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(origin_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, origin_);
     }
     unknownFields.writeTo(output);
   }
@@ -157,13 +153,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    {
-      int dataSize = 0;
-      for (int i = 0; i < text_.size(); i++) {
-        dataSize += computeStringSizeNoTag(text_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getTextList().size();
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(origin_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, origin_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -175,13 +166,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse)) {
+    if (!(obj instanceof via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin)) {
       return super.equals(obj);
     }
-    via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse other = (via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse) obj;
+    via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin other = (via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin) obj;
 
-    if (!getTextList()
-        .equals(other.getTextList())) return false;
+    if (!getOrigin()
+        .equals(other.getOrigin())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -193,78 +184,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getTextCount() > 0) {
-      hash = (37 * hash) + TEXT_FIELD_NUMBER;
-      hash = (53 * hash) + getTextList().hashCode();
-    }
+    hash = (37 * hash) + ORIGIN_FIELD_NUMBER;
+    hash = (53 * hash) + getOrigin().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse parseFrom(
+  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse parseFrom(
+  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse parseFrom(
+  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse parseFrom(
+  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse parseFrom(byte[] data)
+  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse parseFrom(
+  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse parseFrom(java.io.InputStream input)
+  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse parseFrom(
+  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse parseDelimitedFrom(java.io.InputStream input)
+  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse parseDelimitedFrom(
+  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse parseFrom(
+  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse parseFrom(
+  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -277,7 +266,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse prototype) {
+  public static Builder newBuilder(via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -293,26 +282,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code AliveResponse}
+   * Protobuf type {@code AnimalOrigin}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:AliveResponse)
-      via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:AnimalOrigin)
+      via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOriginOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return via.sdj3.slaughterhousegrpcspringboot.protobuf.SlaughterhouseOuterClass.internal_static_AliveResponse_descriptor;
+      return via.sdj3.slaughterhousegrpcspringboot.protobuf.SlaughterhouseOuterClass.internal_static_AnimalOrigin_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return via.sdj3.slaughterhousegrpcspringboot.protobuf.SlaughterhouseOuterClass.internal_static_AliveResponse_fieldAccessorTable
+      return via.sdj3.slaughterhousegrpcspringboot.protobuf.SlaughterhouseOuterClass.internal_static_AnimalOrigin_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse.class, via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse.Builder.class);
+              via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin.class, via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin.Builder.class);
     }
 
-    // Construct using via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse.newBuilder()
+    // Construct using via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -330,25 +319,25 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      text_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      origin_ = "";
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return via.sdj3.slaughterhousegrpcspringboot.protobuf.SlaughterhouseOuterClass.internal_static_AliveResponse_descriptor;
+      return via.sdj3.slaughterhousegrpcspringboot.protobuf.SlaughterhouseOuterClass.internal_static_AnimalOrigin_descriptor;
     }
 
     @java.lang.Override
-    public via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse getDefaultInstanceForType() {
-      return via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse.getDefaultInstance();
+    public via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin getDefaultInstanceForType() {
+      return via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin.getDefaultInstance();
     }
 
     @java.lang.Override
-    public via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse build() {
-      via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse result = buildPartial();
+    public via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin build() {
+      via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -356,14 +345,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse buildPartial() {
-      via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse result = new via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse(this);
-      int from_bitField0_ = bitField0_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        text_ = text_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.text_ = text_;
+    public via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin buildPartial() {
+      via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin result = new via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin(this);
+      result.origin_ = origin_;
       onBuilt();
       return result;
     }
@@ -402,24 +386,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse) {
-        return mergeFrom((via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse)other);
+      if (other instanceof via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin) {
+        return mergeFrom((via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse other) {
-      if (other == via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse.getDefaultInstance()) return this;
-      if (!other.text_.isEmpty()) {
-        if (text_.isEmpty()) {
-          text_ = other.text_;
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          ensureTextIsMutable();
-          text_.addAll(other.text_);
-        }
+    public Builder mergeFrom(via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin other) {
+      if (other == via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin.getDefaultInstance()) return this;
+      if (!other.getOrigin().isEmpty()) {
+        origin_ = other.origin_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -437,11 +415,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse parsedMessage = null;
+      via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse) e.getUnfinishedMessage();
+        parsedMessage = (via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -450,114 +428,79 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
-    private com.google.protobuf.LazyStringList text_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureTextIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        text_ = new com.google.protobuf.LazyStringArrayList(text_);
-        bitField0_ |= 0x00000001;
-       }
-    }
+    private java.lang.Object origin_ = "";
     /**
-     * <code>repeated string text = 1;</code>
-     * @return A list containing the text.
+     * <code>string origin = 1;</code>
+     * @return The origin.
      */
-    public com.google.protobuf.ProtocolStringList
-        getTextList() {
-      return text_.getUnmodifiableView();
+    public java.lang.String getOrigin() {
+      java.lang.Object ref = origin_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        origin_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>repeated string text = 1;</code>
-     * @return The count of text.
-     */
-    public int getTextCount() {
-      return text_.size();
-    }
-    /**
-     * <code>repeated string text = 1;</code>
-     * @param index The index of the element to return.
-     * @return The text at the given index.
-     */
-    public java.lang.String getText(int index) {
-      return text_.get(index);
-    }
-    /**
-     * <code>repeated string text = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the text at the given index.
+     * <code>string origin = 1;</code>
+     * @return The bytes for origin.
      */
     public com.google.protobuf.ByteString
-        getTextBytes(int index) {
-      return text_.getByteString(index);
+        getOriginBytes() {
+      java.lang.Object ref = origin_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        origin_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
     /**
-     * <code>repeated string text = 1;</code>
-     * @param index The index to set the value at.
-     * @param value The text to set.
+     * <code>string origin = 1;</code>
+     * @param value The origin to set.
      * @return This builder for chaining.
      */
-    public Builder setText(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTextIsMutable();
-      text_.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string text = 1;</code>
-     * @param value The text to add.
-     * @return This builder for chaining.
-     */
-    public Builder addText(
+    public Builder setOrigin(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  ensureTextIsMutable();
-      text_.add(value);
+  
+      origin_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string text = 1;</code>
-     * @param values The text to add.
+     * <code>string origin = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder addAllText(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureTextIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, text_);
+    public Builder clearOrigin() {
+      
+      origin_ = getDefaultInstance().getOrigin();
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string text = 1;</code>
+     * <code>string origin = 1;</code>
+     * @param value The bytes for origin to set.
      * @return This builder for chaining.
      */
-    public Builder clearText() {
-      text_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string text = 1;</code>
-     * @param value The bytes of the text to add.
-     * @return This builder for chaining.
-     */
-    public Builder addTextBytes(
+    public Builder setOriginBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      ensureTextIsMutable();
-      text_.add(value);
+      
+      origin_ = value;
       onChanged();
       return this;
     }
@@ -574,41 +517,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:AliveResponse)
+    // @@protoc_insertion_point(builder_scope:AnimalOrigin)
   }
 
-  // @@protoc_insertion_point(class_scope:AliveResponse)
-  private static final via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:AnimalOrigin)
+  private static final via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse();
+    DEFAULT_INSTANCE = new via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin();
   }
 
-  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse getDefaultInstance() {
+  public static via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AliveResponse>
-      PARSER = new com.google.protobuf.AbstractParser<AliveResponse>() {
+  private static final com.google.protobuf.Parser<AnimalOrigin>
+      PARSER = new com.google.protobuf.AbstractParser<AnimalOrigin>() {
     @java.lang.Override
-    public AliveResponse parsePartialFrom(
+    public AnimalOrigin parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new AliveResponse(input, extensionRegistry);
+      return new AnimalOrigin(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<AliveResponse> parser() {
+  public static com.google.protobuf.Parser<AnimalOrigin> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<AliveResponse> getParserForType() {
+  public com.google.protobuf.Parser<AnimalOrigin> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse getDefaultInstanceForType() {
+  public via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalOrigin getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

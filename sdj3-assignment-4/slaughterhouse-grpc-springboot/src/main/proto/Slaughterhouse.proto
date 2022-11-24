@@ -9,21 +9,22 @@ service Slaughterhouse {
   rpc getAllProductFromAnimal(AnimalRequest) returns (ProductPacksResponse);
   rpc getAnimalByRegNr(AnimalRegNr) returns (Animal);
   rpc updateAnimal(Animal) returns (Animal);
-  rpc getAlive(Empty) returns (AliveResponse);
   rpc getAllAnimals(Empty) returns (Animals);
   rpc deleteByRegNr(AnimalRegNr) returns (Animal);
+  rpc getAllAnimalsByOrigin(AnimalOrigin) returns (Animals);
 }
 
 message Empty {}
 
-message AliveResponse {
-  repeated string text = 1;
+message AnimalOrigin {
+  string origin = 1;
 }
 
 message Animal {
   double weight = 1;
   int32 animalNr = 2;
   string type = 3;
+  string origin = 4;
 }
 
 message AnimalRegNr {

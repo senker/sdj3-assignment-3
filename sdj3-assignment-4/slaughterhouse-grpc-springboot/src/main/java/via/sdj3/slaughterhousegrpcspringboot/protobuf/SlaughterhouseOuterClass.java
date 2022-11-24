@@ -20,10 +20,10 @@ public final class SlaughterhouseOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Empty_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_AliveResponse_descriptor;
+    internal_static_AnimalOrigin_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_AliveResponse_fieldAccessorTable;
+      internal_static_AnimalOrigin_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Animal_descriptor;
   static final 
@@ -78,30 +78,31 @@ public final class SlaughterhouseOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024Slaughterhouse.proto\"\007\n\005Empty\"\035\n\rAlive" +
-      "Response\022\014\n\004text\030\001 \003(\t\"8\n\006Animal\022\016\n\006weig" +
-      "ht\030\001 \001(\001\022\020\n\010animalNr\030\002 \001(\005\022\014\n\004type\030\003 \001(\t" +
-      "\"\034\n\013AnimalRegNr\022\r\n\005regNr\030\001 \001(\005\"^\n\nAnimal" +
-      "Part\022\022\n\npartWeight\030\001 \001(\001\022\022\n\npartNumber\030\002" +
-      " \001(\005\022\032\n\tanimalRef\030\003 \001(\0132\007.Animal\022\014\n\004type" +
-      "\030\004 \001(\t\"#\n\007Animals\022\030\n\007animals\030\001 \003(\0132\007.Ani" +
-      "mal\"M\n\005Trays\022\035\n\010partType\030\001 \003(\0132\013.AnimalP" +
-      "art\022\025\n\rmaximumWeight\030\002 \001(\001\022\016\n\006trayNr\030\003 \001" +
-      "(\005\"7\n\014ProductPacks\022\016\n\006packNr\030\001 \001(\005\022\027\n\007tr" +
-      "ayRef\030\002 \003(\0132\006.Trays\" \n\022ProductPackReques" +
-      "t\022\n\n\002id\030\001 \001(\005\"\033\n\rAnimalRequest\022\n\n\002id\030\001 \001" +
-      "(\005\"-\n\024ProductPacksResponse\022\025\n\rproductPac" +
-      "kId\030\001 \003(\0052\355\002\n\016Slaughterhouse\022 \n\014createAn" +
-      "imal\022\007.Animal\032\007.Animal\022;\n\032getAllAnimalRe" +
-      "gNrInProduct\022\023.ProductPackRequest\032\010.Anim" +
-      "als\022@\n\027getAllProductFromAnimal\022\016.AnimalR" +
-      "equest\032\025.ProductPacksResponse\022)\n\020getAnim" +
-      "alByRegNr\022\014.AnimalRegNr\032\007.Animal\022 \n\014upda" +
-      "teAnimal\022\007.Animal\032\007.Animal\022\"\n\010getAlive\022\006" +
-      ".Empty\032\016.AliveResponse\022!\n\rgetAllAnimals\022" +
-      "\006.Empty\032\010.Animals\022&\n\rdeleteByRegNr\022\014.Ani" +
-      "malRegNr\032\007.AnimalB2\n.via.sdj3.slaughterh" +
-      "ousegrpcspringboot.protobufP\001b\006proto3"
+      "\n\024Slaughterhouse.proto\"\007\n\005Empty\"\036\n\014Anima" +
+      "lOrigin\022\016\n\006origin\030\001 \001(\t\"H\n\006Animal\022\016\n\006wei" +
+      "ght\030\001 \001(\001\022\020\n\010animalNr\030\002 \001(\005\022\014\n\004type\030\003 \001(" +
+      "\t\022\016\n\006origin\030\004 \001(\t\"\034\n\013AnimalRegNr\022\r\n\005regN" +
+      "r\030\001 \001(\005\"^\n\nAnimalPart\022\022\n\npartWeight\030\001 \001(" +
+      "\001\022\022\n\npartNumber\030\002 \001(\005\022\032\n\tanimalRef\030\003 \001(\013" +
+      "2\007.Animal\022\014\n\004type\030\004 \001(\t\"#\n\007Animals\022\030\n\007an" +
+      "imals\030\001 \003(\0132\007.Animal\"M\n\005Trays\022\035\n\010partTyp" +
+      "e\030\001 \003(\0132\013.AnimalPart\022\025\n\rmaximumWeight\030\002 " +
+      "\001(\001\022\016\n\006trayNr\030\003 \001(\005\"7\n\014ProductPacks\022\016\n\006p" +
+      "ackNr\030\001 \001(\005\022\027\n\007trayRef\030\002 \003(\0132\006.Trays\" \n\022" +
+      "ProductPackRequest\022\n\n\002id\030\001 \001(\005\"\033\n\rAnimal" +
+      "Request\022\n\n\002id\030\001 \001(\005\"-\n\024ProductPacksRespo" +
+      "nse\022\025\n\rproductPackId\030\001 \003(\0052\373\002\n\016Slaughter" +
+      "house\022 \n\014createAnimal\022\007.Animal\032\007.Animal\022" +
+      ";\n\032getAllAnimalRegNrInProduct\022\023.ProductP" +
+      "ackRequest\032\010.Animals\022@\n\027getAllProductFro" +
+      "mAnimal\022\016.AnimalRequest\032\025.ProductPacksRe" +
+      "sponse\022)\n\020getAnimalByRegNr\022\014.AnimalRegNr" +
+      "\032\007.Animal\022 \n\014updateAnimal\022\007.Animal\032\007.Ani" +
+      "mal\022!\n\rgetAllAnimals\022\006.Empty\032\010.Animals\022&" +
+      "\n\rdeleteByRegNr\022\014.AnimalRegNr\032\007.Animal\0220" +
+      "\n\025getAllAnimalsByOrigin\022\r.AnimalOrigin\032\010" +
+      ".AnimalsB2\n.via.sdj3.slaughterhousegrpcs" +
+      "pringboot.protobufP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -113,18 +114,18 @@ public final class SlaughterhouseOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Empty_descriptor,
         new java.lang.String[] { });
-    internal_static_AliveResponse_descriptor =
+    internal_static_AnimalOrigin_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_AliveResponse_fieldAccessorTable = new
+    internal_static_AnimalOrigin_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_AliveResponse_descriptor,
-        new java.lang.String[] { "Text", });
+        internal_static_AnimalOrigin_descriptor,
+        new java.lang.String[] { "Origin", });
     internal_static_Animal_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_Animal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Animal_descriptor,
-        new java.lang.String[] { "Weight", "AnimalNr", "Type", });
+        new java.lang.String[] { "Weight", "AnimalNr", "Type", "Origin", });
     internal_static_AnimalRegNr_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_AnimalRegNr_fieldAccessorTable = new

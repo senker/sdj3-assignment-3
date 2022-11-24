@@ -14,6 +14,8 @@ import via.sdj3.slaughterhousegrpcspringboot.repositories.AnimalRepository;
 import via.sdj3.slaughterhousegrpcspringboot.repositories.ProductPackRepository;
 import via.sdj3.slaughterhousegrpcspringboot.repositories.TrayRepository;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 @GRpcService
@@ -38,25 +40,33 @@ public class SlaughterhouseImpl extends SlaughterhouseGrpc.SlaughterhouseImplBas
         AnimalModel chicken = animalRepository.save(
                 new AnimalModel(
                         "Chicken",
-                        5.0
+                        5.0,
+                        "Arla"/*,
+                        LocalDate.of(2017, 1, 13)*/
                 )
         );
         AnimalModel chicken1 = animalRepository.save(
                 new AnimalModel(
                         "Chicken",
-                        7.0
+                        7.0,
+                        "Arla"/*,
+                        LocalDate.of(2017, 1, 13)*/
                 )
         );
         AnimalModel cow = animalRepository.save(
                 new AnimalModel(
                         "Cow",
-                        150.0
+                        150.0,
+                        "Not Arla"/*,
+                        LocalDate.of(2017, 1, 13)*/
                 )
         );
         AnimalModel pig = animalRepository.save(
                 new AnimalModel(
                         "Pig",
-                        250.0
+                        250.0,
+                        "Danish crown"/*,
+                        LocalDate.of(2017, 1, 13)*/
                 )
         );
 
@@ -161,6 +171,7 @@ public class SlaughterhouseImpl extends SlaughterhouseGrpc.SlaughterhouseImplBas
                                 .setAnimalNr((animal.getId().intValue()))
                                 .setWeight(animal.getWeight())
                                 .setType(animal.getType())
+                                .setOrigin(animal.getOrigin())
                 )
         );
 
@@ -207,16 +218,12 @@ public class SlaughterhouseImpl extends SlaughterhouseGrpc.SlaughterhouseImplBas
     public void createAnimal(Animal request, StreamObserver<Animal> responseObserver) {
         var createdAnimal = animalRepository.save(new AnimalModel(
                 request.getType(),
-                request.getWeight()
+                request.getWeight(),
+                request.getOrigin()/*,
+                dateConverter(request.getDate())*/
         ));
 
-        Animal.Builder builder = Animal.newBuilder();
-        builder.setAnimalNr(createdAnimal.getId().intValue());
-        builder.setWeight(createdAnimal.getWeight());
-        builder.setType(createdAnimal.getType());
-
-        responseObserver.onNext(builder.build());
-        responseObserver.onCompleted();
+        buildAnimal(responseObserver, createdAnimal);
     }
 
     @Override
@@ -231,14 +238,17 @@ public class SlaughterhouseImpl extends SlaughterhouseGrpc.SlaughterhouseImplBas
         AnimalModel animal = new AnimalModel();
         animal = foundAnimal.get();
 
-        Animal.Builder builder = Animal.newBuilder();
-        builder.setAnimalNr(animal.getId().intValue());
-        builder.setWeight(animal.getWeight());
-        builder.setType(animal.getType());
+        buildAnimal(responseObserver, animal);
 
-        responseObserver.onNext(builder.build());
-        responseObserver.onCompleted();
+    }
 
+
+
+    public LocalDate dateConverter(String date)
+    {
+        String dateInString = date;
+        LocalDate returnDate = LocalDate.parse(dateInString, DateTimeFormatter.BASIC_ISO_DATE);
+        return returnDate;
     }
 
     @Override
@@ -253,16 +263,13 @@ public class SlaughterhouseImpl extends SlaughterhouseGrpc.SlaughterhouseImplBas
         var createdAnimal = animalRepository.save(new AnimalModel(
                 (long) request.getAnimalNr(),
                 request.getType(),
-                request.getWeight()
+                request.getWeight(),
+                request.getOrigin()/*,
+                dateConverter(request.getDate())*/
         ));
 
-        Animal.Builder builder = Animal.newBuilder();
-        builder.setAnimalNr(createdAnimal.getId().intValue());
-        builder.setWeight(createdAnimal.getWeight());
-        builder.setType(createdAnimal.getType());
 
-        responseObserver.onNext(builder.build());
-        responseObserver.onCompleted();
+        buildAnimal(responseObserver, createdAnimal);
     }
 
     @Override
@@ -290,6 +297,39 @@ public class SlaughterhouseImpl extends SlaughterhouseGrpc.SlaughterhouseImplBas
         builder.setAnimalNr(foundAnimal.get().getId().intValue());
         builder.setWeight(foundAnimal.get().getWeight());
         builder.setType(foundAnimal.get().getType());
+        builder.setOrigin(foundAnimal.get().getOrigin());
+
+        responseObserver.onNext(builder.build());
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void getAllAnimalsByOrigin(AnimalOrigin request, StreamObserver<Animals> responseObserver) {
+        var allAnimals = animalRepository.findAll();
+
+
+        List<AnimalModel> byOrigin = new ArrayList<AnimalModel>();
+        for (var animal : allAnimals)
+        {
+            if (animal.getOrigin().equals(request.getOrigin()))
+            {
+                byOrigin.add(animal);
+            }
+        }
+
+        var animals = generateAnimalsResponse(byOrigin);
+
+
+        responseObserver.onNext(animals);
+        responseObserver.onCompleted();
+    }
+
+    private void buildAnimal(StreamObserver<Animal> responseObserver, AnimalModel animal) {
+        Animal.Builder builder = Animal.newBuilder();
+        builder.setAnimalNr(animal.getId().intValue());
+        builder.setWeight(animal.getWeight());
+        builder.setType(animal.getType());
+        builder.setOrigin(animal.getOrigin());
 
         responseObserver.onNext(builder.build());
         responseObserver.onCompleted();
