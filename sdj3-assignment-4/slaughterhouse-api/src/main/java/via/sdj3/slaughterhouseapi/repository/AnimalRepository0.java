@@ -1,3 +1,4 @@
+/*
 package via.sdj3.slaughterhouseapi.repository;
 
 import org.springframework.stereotype.Repository;
@@ -98,3 +99,4 @@ public class AnimalRepository0 {
         animalMap.remove(regNr);
     }
 }
+*/

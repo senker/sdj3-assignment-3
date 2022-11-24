@@ -8,17 +8,27 @@ public class Animal0 {
     private double weight;
     private int regNumber;
     private String origin;
+    private String type;
 
 public Animal0()
 {
 
 }
 
-    public Animal0(Date date, double weight, int regNumber, String origin) {
+    public Animal0(Date date, double weight, int regNumber, String origin, String type) {
         this.date = date;
         this.weight = weight;
         this.regNumber = regNumber;
         this.origin = origin;
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Date getDate() {

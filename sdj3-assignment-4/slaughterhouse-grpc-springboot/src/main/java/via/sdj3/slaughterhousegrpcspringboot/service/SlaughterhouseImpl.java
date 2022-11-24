@@ -202,4 +202,14 @@ public class SlaughterhouseImpl extends SlaughterhouseGrpc.SlaughterhouseImplBas
 
         return builder.build();
     }
+
+    @Override
+    public void createAnimal(Animal request, StreamObserver<Animal> responseObserver) {
+        AnimalModel animal = new AnimalModel(
+                request.getType(),
+                request.getWeight()
+        );
+
+        animalRepository.save(animal);
+    }
 }

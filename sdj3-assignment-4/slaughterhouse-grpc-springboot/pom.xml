@@ -11,6 +11,7 @@
 	<groupId>via.sdj3</groupId>
 	<artifactId>slaughterhouse-grpc-springboot</artifactId>
 	<version>1.0</version>
+	<packaging>jar</packaging>
 	<name>slaughterhouse-grpc-springboot</name>
 	<description>slaughterhouse-grpc-springboot</description>
 	<properties>
@@ -62,6 +63,14 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>7.0.4.Final</version>
+		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 	</dependencies>
 

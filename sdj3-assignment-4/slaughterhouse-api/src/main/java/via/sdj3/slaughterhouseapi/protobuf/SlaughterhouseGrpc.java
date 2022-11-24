@@ -1,4 +1,4 @@
-package via.sdj3.slaughterhousegrpcspringboot.protobuf;
+package via.sdj3.slaughterhouseapi.protobuf;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
@@ -14,29 +14,29 @@ public final class SlaughterhouseGrpc {
   public static final String SERVICE_NAME = "Slaughterhouse";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal,
-      via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal> getCreateAnimalMethod;
+  private static volatile io.grpc.MethodDescriptor<via.sdj3.slaughterhouseapi.protobuf.Animal,
+      via.sdj3.slaughterhouseapi.protobuf.Animal> getCreateAnimalMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "createAnimal",
-      requestType = via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal.class,
-      responseType = via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal.class,
+      requestType = via.sdj3.slaughterhouseapi.protobuf.Animal.class,
+      responseType = via.sdj3.slaughterhouseapi.protobuf.Animal.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal,
-      via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal> getCreateAnimalMethod() {
-    io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal, via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal> getCreateAnimalMethod;
+  public static io.grpc.MethodDescriptor<via.sdj3.slaughterhouseapi.protobuf.Animal,
+      via.sdj3.slaughterhouseapi.protobuf.Animal> getCreateAnimalMethod() {
+    io.grpc.MethodDescriptor<via.sdj3.slaughterhouseapi.protobuf.Animal, via.sdj3.slaughterhouseapi.protobuf.Animal> getCreateAnimalMethod;
     if ((getCreateAnimalMethod = SlaughterhouseGrpc.getCreateAnimalMethod) == null) {
       synchronized (SlaughterhouseGrpc.class) {
         if ((getCreateAnimalMethod = SlaughterhouseGrpc.getCreateAnimalMethod) == null) {
           SlaughterhouseGrpc.getCreateAnimalMethod = getCreateAnimalMethod =
-              io.grpc.MethodDescriptor.<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal, via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal>newBuilder()
+              io.grpc.MethodDescriptor.<via.sdj3.slaughterhouseapi.protobuf.Animal, via.sdj3.slaughterhouseapi.protobuf.Animal>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "createAnimal"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal.getDefaultInstance()))
+                  via.sdj3.slaughterhouseapi.protobuf.Animal.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal.getDefaultInstance()))
+                  via.sdj3.slaughterhouseapi.protobuf.Animal.getDefaultInstance()))
               .setSchemaDescriptor(new SlaughterhouseMethodDescriptorSupplier("createAnimal"))
               .build();
         }
@@ -45,29 +45,29 @@ public final class SlaughterhouseGrpc {
     return getCreateAnimalMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest,
-      via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> getGetAllAnimalRegNrInProductMethod;
+  private static volatile io.grpc.MethodDescriptor<via.sdj3.slaughterhouseapi.protobuf.ProductPackRequest,
+      via.sdj3.slaughterhouseapi.protobuf.Animals> getGetAllAnimalRegNrInProductMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getAllAnimalRegNrInProduct",
-      requestType = via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest.class,
-      responseType = via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals.class,
+      requestType = via.sdj3.slaughterhouseapi.protobuf.ProductPackRequest.class,
+      responseType = via.sdj3.slaughterhouseapi.protobuf.Animals.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest,
-      via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> getGetAllAnimalRegNrInProductMethod() {
-    io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest, via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> getGetAllAnimalRegNrInProductMethod;
+  public static io.grpc.MethodDescriptor<via.sdj3.slaughterhouseapi.protobuf.ProductPackRequest,
+      via.sdj3.slaughterhouseapi.protobuf.Animals> getGetAllAnimalRegNrInProductMethod() {
+    io.grpc.MethodDescriptor<via.sdj3.slaughterhouseapi.protobuf.ProductPackRequest, via.sdj3.slaughterhouseapi.protobuf.Animals> getGetAllAnimalRegNrInProductMethod;
     if ((getGetAllAnimalRegNrInProductMethod = SlaughterhouseGrpc.getGetAllAnimalRegNrInProductMethod) == null) {
       synchronized (SlaughterhouseGrpc.class) {
         if ((getGetAllAnimalRegNrInProductMethod = SlaughterhouseGrpc.getGetAllAnimalRegNrInProductMethod) == null) {
           SlaughterhouseGrpc.getGetAllAnimalRegNrInProductMethod = getGetAllAnimalRegNrInProductMethod =
-              io.grpc.MethodDescriptor.<via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest, via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals>newBuilder()
+              io.grpc.MethodDescriptor.<via.sdj3.slaughterhouseapi.protobuf.ProductPackRequest, via.sdj3.slaughterhouseapi.protobuf.Animals>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getAllAnimalRegNrInProduct"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest.getDefaultInstance()))
+                  via.sdj3.slaughterhouseapi.protobuf.ProductPackRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals.getDefaultInstance()))
+                  via.sdj3.slaughterhouseapi.protobuf.Animals.getDefaultInstance()))
               .setSchemaDescriptor(new SlaughterhouseMethodDescriptorSupplier("getAllAnimalRegNrInProduct"))
               .build();
         }
@@ -76,29 +76,29 @@ public final class SlaughterhouseGrpc {
     return getGetAllAnimalRegNrInProductMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalRequest,
-      via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacksResponse> getGetAllProductFromAnimalMethod;
+  private static volatile io.grpc.MethodDescriptor<via.sdj3.slaughterhouseapi.protobuf.AnimalRequest,
+      via.sdj3.slaughterhouseapi.protobuf.ProductPacksResponse> getGetAllProductFromAnimalMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getAllProductFromAnimal",
-      requestType = via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalRequest.class,
-      responseType = via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacksResponse.class,
+      requestType = via.sdj3.slaughterhouseapi.protobuf.AnimalRequest.class,
+      responseType = via.sdj3.slaughterhouseapi.protobuf.ProductPacksResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalRequest,
-      via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacksResponse> getGetAllProductFromAnimalMethod() {
-    io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalRequest, via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacksResponse> getGetAllProductFromAnimalMethod;
+  public static io.grpc.MethodDescriptor<via.sdj3.slaughterhouseapi.protobuf.AnimalRequest,
+      via.sdj3.slaughterhouseapi.protobuf.ProductPacksResponse> getGetAllProductFromAnimalMethod() {
+    io.grpc.MethodDescriptor<via.sdj3.slaughterhouseapi.protobuf.AnimalRequest, via.sdj3.slaughterhouseapi.protobuf.ProductPacksResponse> getGetAllProductFromAnimalMethod;
     if ((getGetAllProductFromAnimalMethod = SlaughterhouseGrpc.getGetAllProductFromAnimalMethod) == null) {
       synchronized (SlaughterhouseGrpc.class) {
         if ((getGetAllProductFromAnimalMethod = SlaughterhouseGrpc.getGetAllProductFromAnimalMethod) == null) {
           SlaughterhouseGrpc.getGetAllProductFromAnimalMethod = getGetAllProductFromAnimalMethod =
-              io.grpc.MethodDescriptor.<via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalRequest, via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacksResponse>newBuilder()
+              io.grpc.MethodDescriptor.<via.sdj3.slaughterhouseapi.protobuf.AnimalRequest, via.sdj3.slaughterhouseapi.protobuf.ProductPacksResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getAllProductFromAnimal"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalRequest.getDefaultInstance()))
+                  via.sdj3.slaughterhouseapi.protobuf.AnimalRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacksResponse.getDefaultInstance()))
+                  via.sdj3.slaughterhouseapi.protobuf.ProductPacksResponse.getDefaultInstance()))
               .setSchemaDescriptor(new SlaughterhouseMethodDescriptorSupplier("getAllProductFromAnimal"))
               .build();
         }
@@ -107,29 +107,29 @@ public final class SlaughterhouseGrpc {
     return getGetAllProductFromAnimalMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty,
-      via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse> getGetAliveMethod;
+  private static volatile io.grpc.MethodDescriptor<via.sdj3.slaughterhouseapi.protobuf.Empty,
+      via.sdj3.slaughterhouseapi.protobuf.AliveResponse> getGetAliveMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getAlive",
-      requestType = via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty.class,
-      responseType = via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse.class,
+      requestType = via.sdj3.slaughterhouseapi.protobuf.Empty.class,
+      responseType = via.sdj3.slaughterhouseapi.protobuf.AliveResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty,
-      via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse> getGetAliveMethod() {
-    io.grpc.MethodDescriptor<via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty, via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse> getGetAliveMethod;
+  public static io.grpc.MethodDescriptor<via.sdj3.slaughterhouseapi.protobuf.Empty,
+      via.sdj3.slaughterhouseapi.protobuf.AliveResponse> getGetAliveMethod() {
+    io.grpc.MethodDescriptor<via.sdj3.slaughterhouseapi.protobuf.Empty, via.sdj3.slaughterhouseapi.protobuf.AliveResponse> getGetAliveMethod;
     if ((getGetAliveMethod = SlaughterhouseGrpc.getGetAliveMethod) == null) {
       synchronized (SlaughterhouseGrpc.class) {
         if ((getGetAliveMethod = SlaughterhouseGrpc.getGetAliveMethod) == null) {
           SlaughterhouseGrpc.getGetAliveMethod = getGetAliveMethod =
-              io.grpc.MethodDescriptor.<via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty, via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse>newBuilder()
+              io.grpc.MethodDescriptor.<via.sdj3.slaughterhouseapi.protobuf.Empty, via.sdj3.slaughterhouseapi.protobuf.AliveResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getAlive"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty.getDefaultInstance()))
+                  via.sdj3.slaughterhouseapi.protobuf.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse.getDefaultInstance()))
+                  via.sdj3.slaughterhouseapi.protobuf.AliveResponse.getDefaultInstance()))
               .setSchemaDescriptor(new SlaughterhouseMethodDescriptorSupplier("getAlive"))
               .build();
         }
@@ -188,29 +188,29 @@ public final class SlaughterhouseGrpc {
 
     /**
      */
-    public void createAnimal(via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal request,
-        io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal> responseObserver) {
+    public void createAnimal(via.sdj3.slaughterhouseapi.protobuf.Animal request,
+        io.grpc.stub.StreamObserver<via.sdj3.slaughterhouseapi.protobuf.Animal> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateAnimalMethod(), responseObserver);
     }
 
     /**
      */
-    public void getAllAnimalRegNrInProduct(via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest request,
-        io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> responseObserver) {
+    public void getAllAnimalRegNrInProduct(via.sdj3.slaughterhouseapi.protobuf.ProductPackRequest request,
+        io.grpc.stub.StreamObserver<via.sdj3.slaughterhouseapi.protobuf.Animals> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAllAnimalRegNrInProductMethod(), responseObserver);
     }
 
     /**
      */
-    public void getAllProductFromAnimal(via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalRequest request,
-        io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacksResponse> responseObserver) {
+    public void getAllProductFromAnimal(via.sdj3.slaughterhouseapi.protobuf.AnimalRequest request,
+        io.grpc.stub.StreamObserver<via.sdj3.slaughterhouseapi.protobuf.ProductPacksResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAllProductFromAnimalMethod(), responseObserver);
     }
 
     /**
      */
-    public void getAlive(via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse> responseObserver) {
+    public void getAlive(via.sdj3.slaughterhouseapi.protobuf.Empty request,
+        io.grpc.stub.StreamObserver<via.sdj3.slaughterhouseapi.protobuf.AliveResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAliveMethod(), responseObserver);
     }
 
@@ -220,29 +220,29 @@ public final class SlaughterhouseGrpc {
             getCreateAnimalMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal,
-                via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal>(
+                via.sdj3.slaughterhouseapi.protobuf.Animal,
+                via.sdj3.slaughterhouseapi.protobuf.Animal>(
                   this, METHODID_CREATE_ANIMAL)))
           .addMethod(
             getGetAllAnimalRegNrInProductMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest,
-                via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals>(
+                via.sdj3.slaughterhouseapi.protobuf.ProductPackRequest,
+                via.sdj3.slaughterhouseapi.protobuf.Animals>(
                   this, METHODID_GET_ALL_ANIMAL_REG_NR_IN_PRODUCT)))
           .addMethod(
             getGetAllProductFromAnimalMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalRequest,
-                via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacksResponse>(
+                via.sdj3.slaughterhouseapi.protobuf.AnimalRequest,
+                via.sdj3.slaughterhouseapi.protobuf.ProductPacksResponse>(
                   this, METHODID_GET_ALL_PRODUCT_FROM_ANIMAL)))
           .addMethod(
             getGetAliveMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty,
-                via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse>(
+                via.sdj3.slaughterhouseapi.protobuf.Empty,
+                via.sdj3.slaughterhouseapi.protobuf.AliveResponse>(
                   this, METHODID_GET_ALIVE)))
           .build();
     }
@@ -264,32 +264,32 @@ public final class SlaughterhouseGrpc {
 
     /**
      */
-    public void createAnimal(via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal request,
-        io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal> responseObserver) {
+    public void createAnimal(via.sdj3.slaughterhouseapi.protobuf.Animal request,
+        io.grpc.stub.StreamObserver<via.sdj3.slaughterhouseapi.protobuf.Animal> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateAnimalMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void getAllAnimalRegNrInProduct(via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest request,
-        io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> responseObserver) {
+    public void getAllAnimalRegNrInProduct(via.sdj3.slaughterhouseapi.protobuf.ProductPackRequest request,
+        io.grpc.stub.StreamObserver<via.sdj3.slaughterhouseapi.protobuf.Animals> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAllAnimalRegNrInProductMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void getAllProductFromAnimal(via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalRequest request,
-        io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacksResponse> responseObserver) {
+    public void getAllProductFromAnimal(via.sdj3.slaughterhouseapi.protobuf.AnimalRequest request,
+        io.grpc.stub.StreamObserver<via.sdj3.slaughterhouseapi.protobuf.ProductPacksResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAllProductFromAnimalMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void getAlive(via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse> responseObserver) {
+    public void getAlive(via.sdj3.slaughterhouseapi.protobuf.Empty request,
+        io.grpc.stub.StreamObserver<via.sdj3.slaughterhouseapi.protobuf.AliveResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAliveMethod(), getCallOptions()), request, responseObserver);
     }
@@ -311,28 +311,28 @@ public final class SlaughterhouseGrpc {
 
     /**
      */
-    public via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal createAnimal(via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal request) {
+    public via.sdj3.slaughterhouseapi.protobuf.Animal createAnimal(via.sdj3.slaughterhouseapi.protobuf.Animal request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateAnimalMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals getAllAnimalRegNrInProduct(via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest request) {
+    public via.sdj3.slaughterhouseapi.protobuf.Animals getAllAnimalRegNrInProduct(via.sdj3.slaughterhouseapi.protobuf.ProductPackRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAllAnimalRegNrInProductMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacksResponse getAllProductFromAnimal(via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalRequest request) {
+    public via.sdj3.slaughterhouseapi.protobuf.ProductPacksResponse getAllProductFromAnimal(via.sdj3.slaughterhouseapi.protobuf.AnimalRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAllProductFromAnimalMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse getAlive(via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty request) {
+    public via.sdj3.slaughterhouseapi.protobuf.AliveResponse getAlive(via.sdj3.slaughterhouseapi.protobuf.Empty request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAliveMethod(), getCallOptions(), request);
     }
@@ -354,32 +354,32 @@ public final class SlaughterhouseGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal> createAnimal(
-        via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal request) {
+    public com.google.common.util.concurrent.ListenableFuture<via.sdj3.slaughterhouseapi.protobuf.Animal> createAnimal(
+        via.sdj3.slaughterhouseapi.protobuf.Animal request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateAnimalMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals> getAllAnimalRegNrInProduct(
-        via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<via.sdj3.slaughterhouseapi.protobuf.Animals> getAllAnimalRegNrInProduct(
+        via.sdj3.slaughterhouseapi.protobuf.ProductPackRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAllAnimalRegNrInProductMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacksResponse> getAllProductFromAnimal(
-        via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<via.sdj3.slaughterhouseapi.protobuf.ProductPacksResponse> getAllProductFromAnimal(
+        via.sdj3.slaughterhouseapi.protobuf.AnimalRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAllProductFromAnimalMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse> getAlive(
-        via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty request) {
+    public com.google.common.util.concurrent.ListenableFuture<via.sdj3.slaughterhouseapi.protobuf.AliveResponse> getAlive(
+        via.sdj3.slaughterhouseapi.protobuf.Empty request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAliveMethod(), getCallOptions()), request);
     }
@@ -408,20 +408,20 @@ public final class SlaughterhouseGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_CREATE_ANIMAL:
-          serviceImpl.createAnimal((via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal) request,
-              (io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animal>) responseObserver);
+          serviceImpl.createAnimal((via.sdj3.slaughterhouseapi.protobuf.Animal) request,
+              (io.grpc.stub.StreamObserver<via.sdj3.slaughterhouseapi.protobuf.Animal>) responseObserver);
           break;
         case METHODID_GET_ALL_ANIMAL_REG_NR_IN_PRODUCT:
-          serviceImpl.getAllAnimalRegNrInProduct((via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPackRequest) request,
-              (io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.Animals>) responseObserver);
+          serviceImpl.getAllAnimalRegNrInProduct((via.sdj3.slaughterhouseapi.protobuf.ProductPackRequest) request,
+              (io.grpc.stub.StreamObserver<via.sdj3.slaughterhouseapi.protobuf.Animals>) responseObserver);
           break;
         case METHODID_GET_ALL_PRODUCT_FROM_ANIMAL:
-          serviceImpl.getAllProductFromAnimal((via.sdj3.slaughterhousegrpcspringboot.protobuf.AnimalRequest) request,
-              (io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.ProductPacksResponse>) responseObserver);
+          serviceImpl.getAllProductFromAnimal((via.sdj3.slaughterhouseapi.protobuf.AnimalRequest) request,
+              (io.grpc.stub.StreamObserver<via.sdj3.slaughterhouseapi.protobuf.ProductPacksResponse>) responseObserver);
           break;
         case METHODID_GET_ALIVE:
-          serviceImpl.getAlive((via.sdj3.slaughterhousegrpcspringboot.protobuf.Empty) request,
-              (io.grpc.stub.StreamObserver<via.sdj3.slaughterhousegrpcspringboot.protobuf.AliveResponse>) responseObserver);
+          serviceImpl.getAlive((via.sdj3.slaughterhouseapi.protobuf.Empty) request,
+              (io.grpc.stub.StreamObserver<via.sdj3.slaughterhouseapi.protobuf.AliveResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -445,7 +445,7 @@ public final class SlaughterhouseGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return via.sdj3.slaughterhousegrpcspringboot.protobuf.SlaughterhouseOuterClass.getDescriptor();
+      return via.sdj3.slaughterhouseapi.protobuf.SlaughterhouseOuterClass.getDescriptor();
     }
 
     @java.lang.Override

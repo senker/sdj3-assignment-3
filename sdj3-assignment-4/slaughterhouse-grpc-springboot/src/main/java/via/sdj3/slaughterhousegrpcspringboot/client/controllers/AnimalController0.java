@@ -1,15 +1,12 @@
-package via.sdj3.slaughterhouseapi.controller;
+package via.sdj3.slaughterhousegrpcspringboot.client.controllers;
 
 import com.google.protobuf.Descriptors;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import via.sdj3.slaughterhouseapi.model.Animal0;
-//import via.sdj3.slaughterhouseapi.repository.AnimalRepository0;
-import via.sdj3.slaughterhouseapi.services.animalService.AnimalService;
+import via.sdj3.slaughterhousegrpcspringboot.models.AnimalModel;
+import via.sdj3.slaughterhousegrpcspringboot.client.services.animalService.AnimalService;
 
-import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -25,9 +22,16 @@ public class AnimalController0 {
 
     @PostMapping("/animals")  // C endpoint
     @ResponseBody
-    public ResponseEntity<Object> createAnimal(@RequestBody Animal0 animal) {
-        Map<Descriptors.FieldDescriptor, Object> animalResponse = animalService.createAnimal(animal);
-        return new ResponseEntity<Object>(animalResponse, HttpStatus.OK);
+    public ResponseEntity<Object> createAnimal(@RequestBody AnimalModel animal) {
+        try{
+            Map<Descriptors.FieldDescriptor, Object> animalResponse = animalService.createAnimal(animal);
+            return new ResponseEntity<Object>(animalResponse, HttpStatus.OK);
+        }
+        catch (Exception e)
+        {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
     }
 
     /*@GetMapping("/animals")  // R endpoint
