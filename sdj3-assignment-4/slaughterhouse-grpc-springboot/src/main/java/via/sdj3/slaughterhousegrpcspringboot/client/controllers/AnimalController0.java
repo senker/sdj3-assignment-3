@@ -1,18 +1,13 @@
 package via.sdj3.slaughterhousegrpcspringboot.client.controllers;
-
-import com.google.protobuf.Descriptors;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import via.sdj3.slaughterhousegrpcspringboot.models.AnimalModel;
 import via.sdj3.slaughterhousegrpcspringboot.client.services.animalService.AnimalService;
-
-import java.util.Map;
+import via.sdj3.slaughterhousegrpcspringboot.models.ProductPackModel;
+import java.util.List;
 
 @RestController
 @RequestMapping("/")
 public class AnimalController0 {
-    //private AnimalRepository0 animalRepo;
     AnimalService animalService = new AnimalService();
 
     public AnimalController0(AnimalService animalService)
@@ -22,53 +17,58 @@ public class AnimalController0 {
 
     @PostMapping("/animals")  // C endpoint
     @ResponseBody
-    public ResponseEntity<Object> createAnimal(@RequestBody AnimalModel animal) {
-        try{
-            Map<Descriptors.FieldDescriptor, Object> animalResponse = animalService.createAnimal(animal);
-            return new ResponseEntity<Object>(animalResponse, HttpStatus.OK);
-        }
-        catch (Exception e)
-        {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        }
-
+    public AnimalModel createAnimal(@RequestBody AnimalModel animal) {
+        return animalService.createAnimal(animal);
     }
 
-    /*@GetMapping("/animals")  // R endpoint
+    @GetMapping("/animals/{regNr}")  // R endpoint
     @ResponseBody
-    public List<Animal0> getAnimals(
+    public AnimalModel getAnimalByRegNr(@PathVariable Integer regNr) {
+        return animalService.findByRegNr(regNr);
+    }
+
+    @PutMapping("/animals/{regNr}")  // U endpoint
+    public AnimalModel updateAnimal(@PathVariable Integer regNr, @RequestBody AnimalModel animal) {
+        animal.setId((long) regNr);
+
+        return animalService.updateAnimal(animal);
+    }
+
+    @GetMapping("/animals")  // R endpoint
+    @ResponseBody
+    public List<AnimalModel> getAnimals(
             @RequestParam(required = false, value = "date") String date,
             @RequestParam(required = false, value = "origin") String origin
     ) {
         if(date != null)
         {
-            return animalRepo.findByDate(date);
+            return animalService.findByDate(date);
         }
 
         if(origin != null)
         {
-            return animalRepo.findByOrigin(origin);
+            return animalService.findByOrigin(origin);
         }
 
-        List<Animal0> list = animalRepo.findAll();
+        List<AnimalModel> list = animalService.findAll();
         return list;
-    }
-
-    @GetMapping("/animals/{regNr}")  // R endpoint
-    @ResponseBody
-    public Animal0 getAnimalByRegNr(@PathVariable Integer regNr) {
-        return animalRepo.findByRegNr(regNr);
-    }
-
-    @PutMapping("/animals/{regNr}")  // U endpoint
-    public Animal0 updateAnimal(@PathVariable Integer regNr, @RequestBody Animal0 animal) {
-        animal.setRegNumber(regNr);
-        return animalRepo.updateAnimal(animal);
     }
 
     @DeleteMapping("/animals/{regNr}")  // D endpoint
     public String deleteAnimal(@PathVariable Integer regNr) {
-        animalRepo.deleteByRegNr(regNr);
+        animalService.deleteByRegNr(regNr);
         return "Animal deleted";
-    }*/
+    }
+
+    @GetMapping("/animals/product/{productId}")  // R endpoint
+    @ResponseBody
+    public List<AnimalModel> getAllAnimalRegNrInProduct(@PathVariable Integer productId) {
+        return animalService.getAllAnimalRegNrInProduct(productId);
+    }
+
+        @GetMapping("/animals/productFromAnimal/{animalId}")  // R endpoint
+    @ResponseBody
+    public List<ProductPackModel> getAllProductFromAnimal(@PathVariable Integer animalId) {
+        return animalService.getAllProductFromAnimal(animalId);
+    }
 }

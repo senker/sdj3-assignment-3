@@ -7,7 +7,11 @@ service Slaughterhouse {
   rpc createAnimal(Animal) returns (Animal);
   rpc getAllAnimalRegNrInProduct(ProductPackRequest) returns (Animals);
   rpc getAllProductFromAnimal(AnimalRequest) returns (ProductPacksResponse);
+  rpc getAnimalByRegNr(AnimalRegNr) returns (Animal);
+  rpc updateAnimal(Animal) returns (Animal);
   rpc getAlive(Empty) returns (AliveResponse);
+  rpc getAllAnimals(Empty) returns (Animals);
+  rpc deleteByRegNr(AnimalRegNr) returns (Animal);
 }
 
 message Empty {}
@@ -20,6 +24,10 @@ message Animal {
   double weight = 1;
   int32 animalNr = 2;
   string type = 3;
+}
+
+message AnimalRegNr {
+  int32 regNr = 1;
 }
 
 message AnimalPart {

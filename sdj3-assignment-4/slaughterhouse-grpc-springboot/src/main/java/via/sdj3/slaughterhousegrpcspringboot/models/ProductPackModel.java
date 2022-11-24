@@ -1,5 +1,7 @@
 package via.sdj3.slaughterhousegrpcspringboot.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
@@ -17,9 +19,14 @@ public class ProductPackModel {
     )
     @ManyToMany(fetch = FetchType.EAGER)
     @NotNull
+    @JsonIgnore
     Set<TrayModel> trays;
 
     public ProductPackModel() { }
+
+    public ProductPackModel(Long id) {
+        this.id = id;
+    }
 
     public ProductPackModel(Set<TrayModel> trays) {
         this.trays = trays;

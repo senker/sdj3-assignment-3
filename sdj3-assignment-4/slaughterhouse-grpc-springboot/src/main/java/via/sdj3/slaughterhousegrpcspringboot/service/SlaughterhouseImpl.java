@@ -113,12 +113,12 @@ public class SlaughterhouseImpl extends SlaughterhouseGrpc.SlaughterhouseImplBas
         );
 
         ProductPackModel productPack = productPackRepository.save(
-            new ProductPackModel(
-                new HashSet<TrayModel>(Arrays.asList(
-                    chickenBreastTray,
-                    cowTray
-                ))
-            )
+                new ProductPackModel(
+                        new HashSet<TrayModel>(Arrays.asList(
+                                chickenBreastTray,
+                                cowTray
+                        ))
+                )
         );
 
         ProductPackModel productPack1 = productPackRepository.save(
@@ -205,11 +205,93 @@ public class SlaughterhouseImpl extends SlaughterhouseGrpc.SlaughterhouseImplBas
 
     @Override
     public void createAnimal(Animal request, StreamObserver<Animal> responseObserver) {
-        AnimalModel animal = new AnimalModel(
+        var createdAnimal = animalRepository.save(new AnimalModel(
                 request.getType(),
                 request.getWeight()
-        );
+        ));
 
-        animalRepository.save(animal);
+        Animal.Builder builder = Animal.newBuilder();
+        builder.setAnimalNr(createdAnimal.getId().intValue());
+        builder.setWeight(createdAnimal.getWeight());
+        builder.setType(createdAnimal.getType());
+
+        responseObserver.onNext(builder.build());
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void getAnimalByRegNr(AnimalRegNr request, StreamObserver<Animal> responseObserver) {
+        Optional<AnimalModel> foundAnimal = animalRepository.findById((long) request.getRegNr());
+
+        if (foundAnimal.isEmpty()) {
+            var status = Status.NOT_FOUND.withDescription("Animal not found");
+            responseObserver.onError(status.asException());
+            return;
+        }
+        AnimalModel animal = new AnimalModel();
+        animal = foundAnimal.get();
+
+        Animal.Builder builder = Animal.newBuilder();
+        builder.setAnimalNr(animal.getId().intValue());
+        builder.setWeight(animal.getWeight());
+        builder.setType(animal.getType());
+
+        responseObserver.onNext(builder.build());
+        responseObserver.onCompleted();
+
+    }
+
+    @Override
+    public void updateAnimal(Animal request, StreamObserver<Animal> responseObserver) {
+        Optional<AnimalModel> foundAnimal = animalRepository.findById((long) request.getAnimalNr());
+
+        if (foundAnimal.isEmpty()) {
+            var status = Status.NOT_FOUND.withDescription("Animal not found");
+            responseObserver.onError(status.asException());
+            return;
+        }
+        var createdAnimal = animalRepository.save(new AnimalModel(
+                (long) request.getAnimalNr(),
+                request.getType(),
+                request.getWeight()
+        ));
+
+        Animal.Builder builder = Animal.newBuilder();
+        builder.setAnimalNr(createdAnimal.getId().intValue());
+        builder.setWeight(createdAnimal.getWeight());
+        builder.setType(createdAnimal.getType());
+
+        responseObserver.onNext(builder.build());
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void getAllAnimals(Empty request, StreamObserver<Animals> responseObserver) {
+        var allAnimals = animalRepository.findAll();
+
+        var animals = generateAnimalsResponse(allAnimals);
+        responseObserver.onNext(animals);
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void deleteByRegNr(AnimalRegNr request, StreamObserver<Animal> responseObserver) {
+        Optional<AnimalModel> foundAnimal = animalRepository.findById((long) request.getRegNr());
+
+        if (foundAnimal.isEmpty()) {
+            var status = Status.NOT_FOUND.withDescription("Animal not found");
+            responseObserver.onError(status.asException());
+            return;
+        }
+
+        animalRepository.delete(foundAnimal.get());
+
+        Animal.Builder builder = Animal.newBuilder();
+        builder.setAnimalNr(foundAnimal.get().getId().intValue());
+        builder.setWeight(foundAnimal.get().getWeight());
+        builder.setType(foundAnimal.get().getType());
+
+        responseObserver.onNext(builder.build());
+        responseObserver.onCompleted();
     }
 }
