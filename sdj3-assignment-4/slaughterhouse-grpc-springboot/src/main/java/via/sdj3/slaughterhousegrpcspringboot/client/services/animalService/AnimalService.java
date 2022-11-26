@@ -104,12 +104,7 @@ public class AnimalService {
         AnimalRegNr request = AnimalRegNr.newBuilder().setRegNr(regNr).build();
         Animal animalProtoResponse = synchronousStub.deleteByRegNr(request);
     }
-/*    public LocalDate dateConverter(String date)
-    {
-        String dateInString = date;
-        LocalDate returnDate = LocalDate.parse(dateInString, DateTimeFormatter.BASIC_ISO_DATE);
-        return returnDate;
-    }*/
+
     public List<AnimalModel> getAllAnimalRegNrInProduct(Integer productId) {
         ProductPackRequest request = ProductPackRequest.newBuilder().setId(productId.intValue()).build();
         Animals animalProtoResponse = synchronousStub.getAllAnimalRegNrInProduct(request);
